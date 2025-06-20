@@ -5,6 +5,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
+    private float m_maxTime;
+    private bool m_hasTimeOverflowed;
+
+    [SerializeField] private float m_timeUnderflowDrainSpeed;
+    [SerializeField] private float m_timeOverflowDrainSpeed;
 
     [Header("UI Panels")]
     [SerializeField] private GameObject m_menuUI;
@@ -14,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_gameoverUI;
     [Space]
     [SerializeField] private Slider m_currentTimeSlider;
+    [SerializeField] private Image m_sliderFill;
     [SerializeField] private TMP_Text m_currentTimeText;
 
 
@@ -65,6 +71,8 @@ public class UIManager : MonoBehaviour
 
     public void InitializeGameUI(float _maxTimeValue)
     {
+        Debug.Log("Initializing Game UI");
+        m_maxTime = _maxTimeValue;
         m_currentTimeSlider.minValue = 0f;
         m_currentTimeSlider.maxValue = _maxTimeValue;
         m_currentTimeSlider.value = _maxTimeValue;
@@ -73,12 +81,39 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTime(float _value)
     {
-        m_currentTimeSlider.value = _value;
         m_currentTimeText.text = Mathf.FloorToInt(_value).ToString();
+        if (_value > m_maxTime)
+        {
+            SetTimeOverflowSettings();
+            return;
+        }
+        m_currentTimeSlider.value = _value;
+        SetTimeUnderflowSettings();
     }
 
-    public void UpdateMaxTime(float _value)
+    private void SetTimeOverflowSettings()
     {
-        m_currentTimeSlider.maxValue = _value;
+        if (m_hasTimeOverflowed)
+        {
+            return;
+        }
+        LevelManager.Instance.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
+        m_sliderFill.color = Color.magenta;
+        m_currentTimeText.color = Color.magenta;
+        m_currentTimeSlider.value = m_maxTime;
+
+        m_hasTimeOverflowed = true;
+    }
+
+    private void SetTimeUnderflowSettings()
+    {
+        if (!m_hasTimeOverflowed)
+        {
+            return;
+        }
+        LevelManager.Instance.SetTimeReductionMultiplier(m_timeUnderflowDrainSpeed);
+        m_sliderFill.color = Color.green;
+        m_currentTimeText.color = Color.white;
+        m_hasTimeOverflowed = false;
     }
 }

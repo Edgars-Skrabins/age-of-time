@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour
@@ -9,6 +7,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float m_maxTime;
     [SerializeField] private float m_currentTimeValue;
     [SerializeField] private float m_totalTimePassed;
+    [SerializeField] private float m_timeReductionMultiplier;
 
     public Transform m_BaseTarget;
 
@@ -37,11 +36,16 @@ public class LevelManager : MonoBehaviour
         UpdateGameTime();
     }
 
+    public void SetTimeReductionMultiplier(float _value)
+    {
+        m_timeReductionMultiplier = _value;
+    }
+
     private void UpdateGameTime()
     {
         if (GameManager.Instance.M_CurrentState == GameState.Playing)
         {
-            m_currentTimeValue -= Time.deltaTime;
+            m_currentTimeValue -= Time.deltaTime * m_timeReductionMultiplier;
             UIManager.Instance.UpdateTime(m_currentTimeValue);
 
             if (m_currentTimeValue <= 0)
@@ -52,7 +56,6 @@ public class LevelManager : MonoBehaviour
             if (m_currentTimeValue > m_maxTime)
             {
                 m_maxTime = m_currentTimeValue;
-                UIManager.Instance.UpdateMaxTime(m_maxTime);
             }
 
             m_totalTimePassed += Time.deltaTime;
