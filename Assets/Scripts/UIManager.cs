@@ -76,4 +76,9 @@ public class UIManager : MonoBehaviour
         m_currentTimeSlider.value = _value;
         m_currentTimeText.text = Mathf.FloorToInt(_value).ToString();
     }
+
+    public void UpdateMaxTime(float _value)
+    {
+        m_currentTimeSlider.maxValue = _value;
+    }
 }

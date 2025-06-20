@@ -6,9 +6,11 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
 
-    [SerializeField] private float m_startingMaxTime;
+    [SerializeField] private float m_maxTime;
     [SerializeField] private float m_currentTimeValue;
     [SerializeField] private float m_totalTimePassed;
+
+    public Transform m_BaseTarget;
 
     private void Awake()
     {
@@ -25,16 +27,45 @@ public class LevelManager : MonoBehaviour
 
     public void StartLevel()
     {
-        m_currentTimeValue = m_startingMaxTime;
-        UIManager.Instance.InitializeGameUI(m_startingMaxTime);
+        m_currentTimeValue = m_maxTime;
+        m_totalTimePassed = 0f;
+        UIManager.Instance.InitializeGameUI(m_maxTime);
     }
 
     private void FixedUpdate()
+    {
+        UpdateGameTime();
+    }
+
+    private void UpdateGameTime()
     {
         if (GameManager.Instance.M_CurrentState == GameState.Playing)
         {
             m_currentTimeValue -= Time.deltaTime;
             UIManager.Instance.UpdateTime(m_currentTimeValue);
+
+            if (m_currentTimeValue <= 0)
+            {
+                GameManager.Instance.ChangeState(GameState.GameOver);
+            }
+
+            if (m_currentTimeValue > m_maxTime)
+            {
+                m_maxTime = m_currentTimeValue;
+                UIManager.Instance.UpdateMaxTime(m_maxTime);
+            }
+
+            m_totalTimePassed += Time.deltaTime;
         }
+    }
+
+    public void AddTime(float _value)
+    {
+        m_currentTimeValue += _value;
+    }
+
+    public void RemoveTime(float _value)
+    {
+        m_currentTimeValue -= _value;
     }
 }
