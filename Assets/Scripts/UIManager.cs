@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     [Space]
     [SerializeField] private Slider m_currentTimeSlider;
     [SerializeField] private Image m_sliderFill;
+    [SerializeField] private Image m_sliderFillAccent;
     [SerializeField] private TMP_Text m_currentTimeText;
 
 
@@ -99,6 +100,7 @@ public class UIManager : MonoBehaviour
         }
         LevelManager.Instance.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
         m_sliderFill.color = Color.magenta;
+        m_sliderFillAccent.color = Color.magenta;
         m_currentTimeText.color = Color.magenta;
         m_currentTimeSlider.value = m_maxTime;
 
@@ -113,6 +115,7 @@ public class UIManager : MonoBehaviour
         }
         LevelManager.Instance.SetTimeReductionMultiplier(m_timeUnderflowDrainSpeed);
         m_sliderFill.color = Color.green;
+        m_sliderFillAccent.color = Color.green;
         m_currentTimeText.color = Color.white;
         m_hasTimeOverflowed = false;
     }
