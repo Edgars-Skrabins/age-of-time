@@ -710,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_gunSpriteObject: {fileID: 36697699}
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
-  m_damage: 25
+  m_damage: 5
 --- !u!1 &384910939
 GameObject:
   m_ObjectHideFlags: 0

@@ -395,8 +395,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 907b925877496403488e4630df8b9e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHealth: 25
+  m_maxHealth: 15
+  m_minTimeGainedOnDeath: 0
+  m_maxTimeGainedOnDeath: 5
   m_currentHealth: 0
-  m_damage: 10
+  m_damage: 8
   m_minMaxMoveSpeed: {x: 1, y: 2}
   m_rigidbody: {fileID: 9137906982127061533}

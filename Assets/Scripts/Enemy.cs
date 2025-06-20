@@ -3,6 +3,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float m_maxHealth;
+    [SerializeField] private float m_minTimeGainedOnDeath;
+    [SerializeField] private float m_maxTimeGainedOnDeath;
     [SerializeField] private float m_currentHealth;
     [SerializeField] private float m_damage;
 
@@ -42,8 +44,9 @@ public class Enemy : MonoBehaviour
         m_currentHealth -= _amount;
         if (m_currentHealth <= 0)
         {
+            float m_timeGainedOnDeath = Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath);
+            LevelManager.Instance.AddTime(m_timeGainedOnDeath);
             Destroy(gameObject);
-            LevelManager.Instance.AddTime(m_maxHealth);
         }
     }
 }
