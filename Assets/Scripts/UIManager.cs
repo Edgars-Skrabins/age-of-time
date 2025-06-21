@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_shopUI;
     [SerializeField] private GameObject m_pauseUI;
     [SerializeField] private GameObject m_gameoverUI;
+    [SerializeField] private GameObject m_settingsUI;
     [Space]
     [SerializeField] private Slider m_currentTimeSlider;
     [SerializeField] private Image m_sliderFill;
