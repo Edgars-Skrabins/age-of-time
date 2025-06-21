@@ -24,6 +24,11 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public float GetTime()
+    {
+        return m_currentTimeValue;
+    }
+
     public void StartLevel()
     {
         m_currentTimeValue = m_maxTime;
