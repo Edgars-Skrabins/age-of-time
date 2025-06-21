@@ -5893,6 +5893,7 @@ MonoBehaviour:
   m_gunEffectObject: {fileID: 155483924}
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_damage: 5
+  m_fireRate: 0.15
 --- !u!1 &357691011
 GameObject:
   m_ObjectHideFlags: 0
@@ -11550,18 +11551,6 @@ PrefabInstance:
     - target: {fileID: 5538643353092907587, guid: 9bb02c61028984123858c3a0216ead0e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8502829772413144326, guid: 9bb02c61028984123858c3a0216ead0e, type: 3}
-      propertyPath: m_Colors.m_NormalColor.a
-      value: 0.47058824
-      objectReference: {fileID: 0}
-    - target: {fileID: 8502829772413144326, guid: 9bb02c61028984123858c3a0216ead0e, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.a
-      value: 0.54901963
-      objectReference: {fileID: 0}
-    - target: {fileID: 8856841169331654699, guid: 9bb02c61028984123858c3a0216ead0e, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

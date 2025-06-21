@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,18 +6,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject m_gunEffectObject;
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
     [SerializeField] private float m_damage = 25f;
+    [SerializeField] private float m_fireRate;
+    private float m_fireRateTimer;
 
-    void Update()
+    private void Awake()
+    {
+        m_fireRateTimer = m_fireRate;
+    }
+
+    private void Update()
     {
         TrackMouse();
+        CountFireRateTimer();
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
             HandleMouseClick();
         }
     }
 
-    void TrackMouse()
+
+    private void CountFireRateTimer()
+    {
+        m_fireRateTimer += Time.deltaTime;
+    }
+
+    private void TrackMouse()
     {
         Vector3 mouseScreenPosition = Input.mousePosition;
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
@@ -31,16 +43,29 @@ public class PlayerController : MonoBehaviour
         m_gunSpriteObject.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
-    void HandleMouseClick()
+    private Vector3 GetMouseWorldPosition()
     {
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;
+        return mouseWorldPosition;
+    }
 
-        // Click effect
+    private void HandleMouseClick()
+    {
+        if (m_fireRateTimer >= m_fireRate)
+        {
+            Shoot();
+            m_fireRateTimer = 0f;
+        }
+    }
+
+    private void Shoot()
+    {
+        Vector3 mouseWorldPosition = GetMouseWorldPosition();
+
         SpawnEffect(mouseWorldPosition);
         m_gunEffectObject.SetActive(true);
 
-        // Raycast to detect enemy
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero);
         if (hit.collider != null)
         {
