@@ -43,15 +43,22 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float _amount)
     {
-        Popup popup = Instantiate(m_popupPrefab, transform.position, Quaternion.identity).GetComponent<Popup>();
-        popup.ShowPopup((int)_amount);
-
         m_currentHealth -= _amount;
         if (m_currentHealth <= 0)
         {
-            float m_timeGainedOnDeath = Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath);
+            int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
+            if (m_timeGainedOnDeath > 0)
+            {
+                SpawnPopup(m_timeGainedOnDeath);
+            }
             LevelManager.Instance.AddTime(m_timeGainedOnDeath);
             Destroy(gameObject);
         }
+    }
+
+    private void SpawnPopup(int _value)
+    {
+        Popup popup = Instantiate(m_popupPrefab, transform.position, Quaternion.identity).GetComponent<Popup>();
+        popup.ShowPopup(_value);
     }
 }
