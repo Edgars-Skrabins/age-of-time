@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8772785287393801733}
   - component: {fileID: 5304240133210383450}
   - component: {fileID: 5751878283068297331}
-  - component: {fileID: 8626037742313766855}
   m_Layer: 5
   m_Name: Cost container
   m_TagString: Untagged
@@ -77,22 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8626037742313766855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737274082068968720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcf9bbbc19f9144ddb5f324eed89b73e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_survivorGameObject: {fileID: 0}
-  m_recruitButtonGameObject: {fileID: 737274082068968720}
-  m_recruitCostText: {fileID: 0}
-  m_recruitCost: 20
 --- !u!1 &1681074776175706966
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,9 +88,9 @@ GameObject:
   - component: {fileID: 7155750957940781721}
   - component: {fileID: 3841857129195715899}
   - component: {fileID: 2805782851403179678}
-  - component: {fileID: 255915000035131129}
+  - component: {fileID: 8894594640596321110}
   m_Layer: 5
-  m_Name: Upgrade card
+  m_Name: UpgradeCard_Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +198,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 255915000035131129}
+      - m_Target: {fileID: 8894594640596321110}
         m_TargetAssemblyTypeName: UpgradeCard, Assembly-CSharp
         m_MethodName: Invoke_OnButtonClick
         m_Mode: 1
@@ -227,7 +210,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &255915000035131129
+--- !u!114 &8894594640596321110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,10 +219,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1681074776175706966}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a524220f2a3f04fa487c2554d1745d1f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4541cda1d58ab49bca430358c1c8e19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_buttonImage: {fileID: 3841857129195715899}
+  m_cost: 70
+  m_costText: {fileID: 450142878363588891}
 --- !u!1 &6918895122306669647
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +289,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

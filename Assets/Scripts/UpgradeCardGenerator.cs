@@ -6,10 +6,9 @@ public class UpgradeCardGenerator : MonoBehaviour
 {
     [SerializeField] private int m_amountOfCardsToSpawn;
     [SerializeField] private float m_generationRate;
-    [SerializeField] private UpgradeCard m_upgradeCardPrefab;
-    [SerializeField] private UpgradeCardSO[] m_upgradeCardSOs;
+    [SerializeField] private UpgradeCard[] m_upgradeCardPrefabs;
 
-    private List<UpgradeCard> m_spawnedUpgradeCards;
+    private readonly List<UpgradeCard> m_spawnedUpgradeCards = new List<UpgradeCard>();
     private float m_generationTimer;
 
     private void Update()
@@ -45,8 +44,9 @@ public class UpgradeCardGenerator : MonoBehaviour
         m_generationTimer = 0f;
     }
 
-    private void HandleCardPicked()
+    private void HandleCardPicked(int _upgradeCost)
     {
+        LevelManager.Instance.RemoveTime(_upgradeCost);
         DeleteAllSpawnedCards();
         ResetGenerationTimer();
     }
@@ -64,10 +64,9 @@ public class UpgradeCardGenerator : MonoBehaviour
     {
         for (int i = 0; i < m_amountOfCardsToSpawn; i++)
         {
-            UpgradeCardSO upgradeCardSO = m_upgradeCardSOs[Random.Range(0, m_upgradeCardSOs.Length)];
-            UpgradeCard upgradeCard = Instantiate(m_upgradeCardPrefab, transform);
+            UpgradeCard upgradeCardPrefab = m_upgradeCardPrefabs[Random.Range(0, m_upgradeCardPrefabs.Length)];
+            UpgradeCard upgradeCard = Instantiate(upgradeCardPrefab, transform);
             m_spawnedUpgradeCards.Add(upgradeCard);
-            upgradeCard.SetButtonImage(upgradeCardSO.m_sprite);
             upgradeCard.OnButtonClick += HandleCardPicked;
         }
     }

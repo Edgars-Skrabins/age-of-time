@@ -1,19 +1,27 @@
 using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class UpgradeCard : MonoBehaviour
+public abstract class UpgradeCard : MonoBehaviour
 {
-    [SerializeField] private Image m_buttonImage;
-    public Action OnButtonClick;
+    [SerializeField] private int m_cost;
+    [SerializeField] private TMP_Text m_costText;
+    public Action<int> OnButtonClick;
 
-    public void SetButtonImage(Sprite _sprite)
+    private void Awake()
     {
-        m_buttonImage.sprite = _sprite;
+        m_costText.text = m_cost.ToString();
     }
 
     public void Invoke_OnButtonClick()
     {
-        OnButtonClick?.Invoke();
+        if (m_cost > LevelManager.Instance.GetTime())
+        {
+            return;
+        }
+        DoUpgrade();
+        OnButtonClick?.Invoke(m_cost);
     }
+
+    protected abstract void DoUpgrade();
 }

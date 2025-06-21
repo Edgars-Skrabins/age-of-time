@@ -10028,9 +10028,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd82ec6fb6fc4a2db05ce5351e81e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_amountOfCardsToSpawn: 0
-  m_upgradeCardPrefab: {fileID: 0}
-  m_upgradeCardSOs: []
+  m_amountOfCardsToSpawn: 2
+  m_generationRate: 18
+  m_upgradeCardPrefabs:
+  - {fileID: 8894594640596321110, guid: b91096bd24d0d4fdf8bf2da809767c8a, type: 3}
 --- !u!1 &1679709927
 GameObject:
   m_ObjectHideFlags: 0
