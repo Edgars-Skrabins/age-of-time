@@ -402,3 +402,4 @@ MonoBehaviour:
   m_damage: 8
   m_minMaxMoveSpeed: {x: 1, y: 2}
   m_rigidbody: {fileID: 9137906982127061533}
+  m_popupPrefab: {fileID: 7057120847238521341, guid: 2709bd892d48647faa45d507e101c4b5, type: 3}

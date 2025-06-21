@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Vector2 m_minMaxMoveSpeed;
     [SerializeField] private Rigidbody2D m_rigidbody;
 
+    [SerializeField] private GameObject m_popupPrefab;
+
     private Transform m_target;
     private float m_moveSpeed;
 
@@ -41,6 +43,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float _amount)
     {
+        Popup popup = Instantiate(m_popupPrefab, transform.position, Quaternion.identity).GetComponent<Popup>();
+        popup.ShowPopup((int)_amount);
+
         m_currentHealth -= _amount;
         if (m_currentHealth <= 0)
         {
