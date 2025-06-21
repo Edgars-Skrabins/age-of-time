@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Transform m_gunSpriteObject;
+    [SerializeField] private GameObject m_gunEffectObject;
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
     [SerializeField] private float m_damage = 25f;
 
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
 
         // Click effect
         SpawnEffect(mouseWorldPosition);
+        m_gunEffectObject.SetActive(true);
 
         // Raycast to detect enemy
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero);
