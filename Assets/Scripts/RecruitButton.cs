@@ -4,6 +4,7 @@ using UnityEngine;
 public class RecruitButton : MonoBehaviour
 {
     [SerializeField] private GameObject m_survivorGameObject;
+    [SerializeField] private GameObject m_recruitButtonGameObject;
     [SerializeField] private TMP_Text m_recruitCostText;
     [SerializeField] private int m_recruitCost;
 
@@ -22,6 +23,7 @@ public class RecruitButton : MonoBehaviour
 
     private void Recruit()
     {
+        m_recruitButtonGameObject.SetActive(false);
         m_survivorGameObject.SetActive(true);
         LevelManager.Instance.RemoveTime(m_recruitCost);
     }
