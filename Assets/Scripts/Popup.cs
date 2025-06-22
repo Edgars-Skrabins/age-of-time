@@ -8,6 +8,7 @@ public class Popup : MonoBehaviour
     [SerializeField] private CanvasGroup m_canvasGroup;
     [SerializeField] private float m_animationTime;
     [SerializeField] private float m_maxHeight;
+    [SerializeField] private bool m_destroyOnEnd;
 
     public void ShowPopup(int _value)
     {
@@ -37,6 +38,11 @@ public class Popup : MonoBehaviour
 
         m_popUpText.transform.localPosition = targetPos;
         m_canvasGroup.alpha = 0f;
+
+        if (m_destroyOnEnd)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnDisable()
