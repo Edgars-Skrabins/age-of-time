@@ -75,6 +75,8 @@ public class PlayerController : MonoBehaviour
                 enemy.TakeDamage(m_damage);
             }
         }
+
+        ScreenShake.Instance.AddTrauma(.25f);
     }
 
     private void SpawnEffect(Vector3 mouseWorldPosition)
