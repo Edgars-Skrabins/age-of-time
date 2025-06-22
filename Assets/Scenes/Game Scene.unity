@@ -5894,6 +5894,7 @@ MonoBehaviour:
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_damage: 5
   m_fireRate: 0.15
+  m_screenShakeAmount: 0
 --- !u!1 &357691011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,8 +6403,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f64d1c2850f74fb7ae09ec34720f762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_traumaDecay: 1
-  m_maxShakeMagnitude: 0.5
+  m_traumaDecay: 0
+  m_maxShakeMagnitude: 1
 --- !u!1 &528996706
 GameObject:
   m_ObjectHideFlags: 0

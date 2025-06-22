@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
     [SerializeField] private float m_damage = 25f;
     [SerializeField] private float m_fireRate;
+    [SerializeField] private float m_screenShakeAmount;
     private float m_fireRateTimer;
 
     private void Awake()
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        ScreenShake.Instance.AddTrauma(.25f);
+        ScreenShake.Instance.AddTrauma(m_screenShakeAmount);
     }
 
     private void SpawnEffect(Vector3 mouseWorldPosition)
