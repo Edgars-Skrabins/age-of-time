@@ -10,7 +10,7 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private float m_minSpawnDelay;
     [SerializeField] private float m_maxSpawnDelay;
 
-    private List<Enemy> m_spawnedEnemies = new List<Enemy>();
+    private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
     private GameState lastState;
 
@@ -52,8 +52,8 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         Enemy newEnemy = Instantiate(m_enemyPrefab);
         m_spawnedEnemies.Add(newEnemy);
-        newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
+        newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
     }
 
 

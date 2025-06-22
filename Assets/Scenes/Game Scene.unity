@@ -10205,7 +10205,8 @@ MonoBehaviour:
   m_generationRate: 18
   m_upgradeCardPrefabs:
   - {fileID: 8894594640596321110, guid: b91096bd24d0d4fdf8bf2da809767c8a, type: 3}
-  - {fileID: 8894594640596321110, guid: 7f15e454ca871410ea23e4d465a73140, type: 3}
+  - {fileID: 6201463539964674371, guid: 7f15e454ca871410ea23e4d465a73140, type: 3}
+  - {fileID: 8547543647915381953, guid: dab6545bb76ce40008b4a09d6a38150b, type: 3}
 --- !u!1 &1679709927
 GameObject:
   m_ObjectHideFlags: 0
@@ -10849,7 +10850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eefebb6463dc4480bad2cfe66154ca45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemyPrefab: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+  m_dontDestroyOnLoad: 0
+  m_enemyPrefab: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
   m_minSpawnDelay: 1
