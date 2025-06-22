@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     [SerializeField] private Transform m_gunSpriteObject;
     [SerializeField] private GameObject m_gunEffectObject;
@@ -10,8 +10,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float m_screenShakeAmount;
     private float m_fireRateTimer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         m_fireRateTimer = m_fireRate;
     }
 
@@ -26,6 +27,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void IncreaseFireRate(float _amount)
+    {
+        m_fireRate -= _amount;
+    }
+
+    public void IncreaseDamage(float _amount)
+    {
+        m_damage += _amount;
+    }
 
     private void CountFireRateTimer()
     {
