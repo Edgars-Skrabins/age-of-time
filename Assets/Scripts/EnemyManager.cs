@@ -7,6 +7,10 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private Enemy m_enemyPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
+
+    [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
+    [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
+
     [SerializeField] private float m_minSpawnDelay;
     [SerializeField] private float m_maxSpawnDelay;
 
@@ -36,7 +40,10 @@ public class EnemyManager : Singleton<EnemyManager>
         List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
         foreach (Enemy enemy in spawnedEnemiesCopy)
         {
-            enemy?.ApplySlow(_slowDuration);
+            if (enemy)
+            {
+                enemy.ApplySlow(_slowDuration);
+            }
         }
     }
 
@@ -45,7 +52,10 @@ public class EnemyManager : Singleton<EnemyManager>
         List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
         foreach (Enemy enemy in spawnedEnemiesCopy)
         {
-            enemy?.TakeDamage(9999, false);
+            if (enemy)
+            {
+                enemy.TakeDamage(9999, false);
+            }
         }
     }
 
@@ -53,7 +63,10 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(m_minSpawnDelay, m_maxSpawnDelay));
+            float timeValue = LevelManager.Instance.GetGameTime();
+            float minDelay = m_minSpawnDelayCurve.Evaluate(timeValue);
+            float maxDelay = m_maxSpawnDelayCurve.Evaluate(timeValue);
+            yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
             SpawnEnemy();
         }
     }

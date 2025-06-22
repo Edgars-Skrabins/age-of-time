@@ -8,8 +8,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private float m_currentTimeValue;
     [SerializeField] private float m_totalTimePassed;
     [SerializeField] private float m_timeReductionMultiplier;
-
     public Transform m_BaseTarget;
+
+    private float m_gameTime;
 
     private void Awake()
     {
@@ -24,15 +25,19 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    public void SlowGameTime(float _slowAmount, float _slowDuration)
+    private void Update()
     {
-        Time.timeScale = _slowAmount;
-        Invoke(nameof(ResetGameTime), _slowDuration);
+        CountGameTime();
     }
 
-    private void ResetGameTime()
+    public float GetGameTime()
     {
-        Time.timeScale = 1f;
+        return m_gameTime;
+    }
+
+    private void CountGameTime()
+    {
+        m_gameTime += Time.deltaTime;
     }
 
     public float GetTime()

@@ -5896,7 +5896,7 @@ MonoBehaviour:
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_damage: 5
   m_headshotMultiplier: 2
-  m_fireRate: 0.5
+  m_fireRate: 0.45
   m_screenShakeAmount: 1
 --- !u!114 &302212435
 MonoBehaviour:
@@ -10353,7 +10353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_amountOfCardsToSpawn: 2
-  m_generationRate: 3
+  m_generationRate: 20
   m_upgradeCardPrefabs:
   - {fileID: 8894594640596321110, guid: b91096bd24d0d4fdf8bf2da809767c8a, type: 3}
   - {fileID: 6201463539964674371, guid: 7f15e454ca871410ea23e4d465a73140, type: 3}
@@ -11007,6 +11007,54 @@ MonoBehaviour:
   m_enemyPrefab: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
+  m_minSpawnDelayCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2.7
+      inSlope: -0.005952381
+      outSlope: -0.005952381
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 420
+      value: 0.2
+      inSlope: -0.005952381
+      outSlope: -0.005952381
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_maxSpawnDelayCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 3
+      inSlope: -0.0064285714
+      outSlope: -0.0064285714
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 420
+      value: 0.3
+      inSlope: -0.0064285714
+      outSlope: -0.0064285714
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_minSpawnDelay: 1
   m_maxSpawnDelay: 1
 --- !u!1 &1860904799
