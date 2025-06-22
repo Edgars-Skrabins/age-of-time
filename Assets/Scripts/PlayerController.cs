@@ -19,7 +19,6 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
-        TrackMouse();
         CountFireRateTimer();
 
         if (Input.GetMouseButton(0))
@@ -41,14 +40,6 @@ public class PlayerController : Singleton<PlayerController>
     private void CountFireRateTimer()
     {
         m_fireRateTimer += Time.deltaTime;
-    }
-
-    private void TrackMouse()
-    {
-        Vector3 direction = GetMouseWorldPosition() - m_gunSpriteObject.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        m_gunSpriteObject.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 
     private Vector3 GetMouseWorldPosition()
@@ -88,7 +79,6 @@ public class PlayerController : Singleton<PlayerController>
                 else
                 {
                     enemy.TakeDamage(m_damage);
-
                 }
             }
         }
