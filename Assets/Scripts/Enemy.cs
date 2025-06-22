@@ -43,16 +43,26 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float _amount)
+    public void TakeDamage(float _amount, bool _giveTime = true)
     {
         m_currentHealth -= _amount;
         if (m_currentHealth <= 0)
         {
-            Die();
+            Die(_giveTime);
         }
     }
 
-    private void Die()
+    private void Die(bool _giveTime)
+    {
+        if (_giveTime)
+        {
+            GiveTime();
+        }
+        Destroy(gameObject);
+        OnDeath?.Invoke();
+    }
+
+    private void GiveTime()
     {
         int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
         if (m_timeGainedOnDeath > 0)
@@ -60,8 +70,6 @@ public class Enemy : MonoBehaviour
             SpawnPopup(m_timeGainedOnDeath);
         }
         LevelManager.Instance.AddTime(m_timeGainedOnDeath);
-        Destroy(gameObject);
-        OnDeath?.Invoke();
     }
 
     private void SpawnPopup(int _value)

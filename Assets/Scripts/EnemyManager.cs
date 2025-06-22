@@ -31,6 +31,14 @@ public class EnemyManager : Singleton<EnemyManager>
         lastState = currentState;
     }
 
+    public void KillAllEnemies()
+    {
+        foreach (Enemy enemy in m_spawnedEnemies)
+        {
+            enemy.TakeDamage(9999, false);
+        }
+    }
+
     private IEnumerator SpawnEnemiesLoop()
     {
         while (true)
