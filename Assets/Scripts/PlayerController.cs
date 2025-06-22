@@ -6,6 +6,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject m_gunEffectObject;
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
     [SerializeField] private float m_damage;
+    [SerializeField] private float m_hitSlowDuration;
     [SerializeField] private float m_headshotMultiplier;
     [SerializeField] private float m_fireRate;
     [SerializeField] private float m_screenShakeAmount;
@@ -73,11 +74,13 @@ public class PlayerController : Singleton<PlayerController>
             {
                 if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Head"))
                 {
+                    enemy.ApplySlow(m_hitSlowDuration);
                     enemy.TakeDamage(m_damage * m_headshotMultiplier);
                     Debug.Log("Headshot!");
                 }
                 else
                 {
+                    enemy.ApplySlow(m_hitSlowDuration);
                     enemy.TakeDamage(m_damage);
                 }
             }

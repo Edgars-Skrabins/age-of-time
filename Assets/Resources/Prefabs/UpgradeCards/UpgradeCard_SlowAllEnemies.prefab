@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb56d6ae7b81416ab29527f1c1f16c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cost: 30
+  m_cost: 25
   m_costText: {fileID: 450142878363588891}
   m_description: Slow All Enemies
   m_slowDuration: 5

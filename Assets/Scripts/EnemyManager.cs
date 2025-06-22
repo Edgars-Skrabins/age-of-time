@@ -11,12 +11,8 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
     [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
 
-    [SerializeField] private float m_minSpawnDelay;
-    [SerializeField] private float m_maxSpawnDelay;
-
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
-    private GameState lastState;
 
     private void Update()
     {
@@ -31,8 +27,6 @@ public class EnemyManager : Singleton<EnemyManager>
             StopCoroutine(m_spawnRoutine);
             m_spawnRoutine = null;
         }
-
-        lastState = currentState;
     }
 
     public void DamageRandomEnemy(float _damage)
