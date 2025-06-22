@@ -5608,7 +5608,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeUnderflowDrainSpeed: 1
-  m_timeOverflowDrainSpeed: 2.5
+  m_timeOverflowDrainSpeed: 3
   m_menuUI: {fileID: 137950153}
   m_gameUI: {fileID: 1693786836}
   m_shopUI: {fileID: 963953775}
@@ -10042,7 +10042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_amountOfCardsToSpawn: 2
-  m_generationRate: 20
+  m_generationRate: 12
   m_upgradeCardPrefabs:
   - {fileID: 8894594640596321110, guid: b91096bd24d0d4fdf8bf2da809767c8a, type: 3}
   - {fileID: 6201463539964674371, guid: 7f15e454ca871410ea23e4d465a73140, type: 3}
