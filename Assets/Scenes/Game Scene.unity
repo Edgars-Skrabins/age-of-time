@@ -5895,6 +5895,7 @@ MonoBehaviour:
   m_gunEffectObject: {fileID: 155483924}
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_damage: 5
+  m_headshotMultiplier: 2
   m_fireRate: 0.5
   m_screenShakeAmount: 1
 --- !u!114 &302212435
