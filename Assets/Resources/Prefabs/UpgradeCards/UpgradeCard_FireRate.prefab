@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cost: 40
   m_costText: {fileID: 450142878363588891}
+  m_description: Increase Rate of Fire
   m_fireRateIncrease: 0.02
 --- !u!1 &6918895122306669647
 GameObject:

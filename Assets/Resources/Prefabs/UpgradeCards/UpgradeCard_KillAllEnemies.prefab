@@ -224,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cost: 50
   m_costText: {fileID: 450142878363588891}
+  m_description: Kill All Enemies
 --- !u!1 &6918895122306669647
 GameObject:
   m_ObjectHideFlags: 0
