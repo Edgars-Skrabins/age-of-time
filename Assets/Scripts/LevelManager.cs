@@ -24,6 +24,17 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void SlowGameTime(float _slowAmount, float _slowDuration)
+    {
+        Time.timeScale = _slowAmount;
+        Invoke(nameof(ResetGameTime), _slowDuration);
+    }
+
+    private void ResetGameTime()
+    {
+        Time.timeScale = 1f;
+    }
+
     public float GetTime()
     {
         return m_currentTimeValue;

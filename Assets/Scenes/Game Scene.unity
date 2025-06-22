@@ -10202,11 +10202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_amountOfCardsToSpawn: 2
-  m_generationRate: 18
+  m_generationRate: 3
   m_upgradeCardPrefabs:
   - {fileID: 8894594640596321110, guid: b91096bd24d0d4fdf8bf2da809767c8a, type: 3}
   - {fileID: 6201463539964674371, guid: 7f15e454ca871410ea23e4d465a73140, type: 3}
   - {fileID: 8547543647915381953, guid: dab6545bb76ce40008b4a09d6a38150b, type: 3}
+  - {fileID: 6812650602321368360, guid: fb09fb310082f44dc9c4f83447327821, type: 3}
 --- !u!1 &1679709927
 GameObject:
   m_ObjectHideFlags: 0

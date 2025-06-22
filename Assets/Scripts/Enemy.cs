@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     public Action OnDeath;
     private Transform m_target;
     private float m_moveSpeed;
+    private bool m_isSlowed;
 
     private void Start()
     {
@@ -28,8 +29,18 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         if (m_target == null) return;
+        ApplyVelocity();
+    }
 
+    private void ApplyVelocity()
+    {
         Vector2 direction = ((Vector2)m_target.position - m_rigidbody.position).normalized;
+        if (m_isSlowed)
+        {
+            m_rigidbody.velocity = direction * (m_moveSpeed * 0.5f);
+            return;
+        }
+
         m_rigidbody.velocity = direction * m_moveSpeed;
     }
 
@@ -41,6 +52,17 @@ public class Enemy : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public void ApplySlow(float _slowDuration)
+    {
+        m_isSlowed = true;
+        Invoke(nameof(ResetSlow), _slowDuration);
+    }
+
+    private void ResetSlow()
+    {
+        m_isSlowed = false;
     }
 
     public void TakeDamage(float _amount, bool _giveTime = true)

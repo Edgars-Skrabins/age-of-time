@@ -31,11 +31,21 @@ public class EnemyManager : Singleton<EnemyManager>
         lastState = currentState;
     }
 
+    public void SlowAllEnemies(float _slowDuration)
+    {
+        List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
+        foreach (Enemy enemy in spawnedEnemiesCopy)
+        {
+            enemy?.ApplySlow(_slowDuration);
+        }
+    }
+
     public void KillAllEnemies()
     {
-        foreach (Enemy enemy in m_spawnedEnemies)
+        List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
+        foreach (Enemy enemy in spawnedEnemiesCopy)
         {
-            enemy.TakeDamage(9999, false);
+            enemy?.TakeDamage(9999, false);
         }
     }
 
