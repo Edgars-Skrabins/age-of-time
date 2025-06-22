@@ -35,6 +35,23 @@ public class EnemyManager : Singleton<EnemyManager>
         lastState = currentState;
     }
 
+    public void DamageRandomEnemy(float _damage)
+    {
+        List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
+        Enemy randomEnemy = spawnedEnemiesCopy[Random.Range(0, spawnedEnemiesCopy.Count)];
+
+        if (randomEnemy)
+        {
+            randomEnemy.ApplySlow(_damage);
+            randomEnemy.TakeDamage(_damage);
+        }
+    }
+
+    public bool HasEnemiesSpawned()
+    {
+        return m_spawnedEnemies.Count > 0;
+    }
+
     public void SlowAllEnemies(float _slowDuration)
     {
         List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);

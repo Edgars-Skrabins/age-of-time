@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class Survivor : MonoBehaviour
 {
+    [SerializeField] private float m_damage;
     [SerializeField] private float m_fireFrequency;
-    [SerializeField] private Transform m_firePoint;
-    [SerializeField] private GameObject m_bulletPrefab;
 
     private void Update()
     {
@@ -21,7 +20,7 @@ public class Survivor : MonoBehaviour
 
     private void HandleShoot()
     {
-        if (m_fireTimer >= m_fireFrequency)
+        if (m_fireTimer >= m_fireFrequency && EnemyManager.I.HasEnemiesSpawned())
         {
             ResetFireTimer();
             Shoot();
@@ -35,6 +34,6 @@ public class Survivor : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(m_bulletPrefab, m_firePoint.position, m_firePoint.rotation);
+        EnemyManager.I.DamageRandomEnemy(m_damage);
     }
 }
