@@ -1,14 +1,16 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
-    [SerializeField] private GameObject m_enemyPrefab;
+    [SerializeField] private Enemy m_enemyPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
     [SerializeField] private float m_minSpawnDelay;
     [SerializeField] private float m_maxSpawnDelay;
 
+    private List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
     private GameState lastState;
 
@@ -40,9 +42,12 @@ public class EnemyManager : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        GameObject newEnemy = Instantiate(m_enemyPrefab);
+        Enemy newEnemy = Instantiate(m_enemyPrefab);
+        m_spawnedEnemies.Add(newEnemy);
+        newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
     }
+
 
     private Vector3 GetRandomSpawnPoint()
     {

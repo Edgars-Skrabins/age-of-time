@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,9 +12,9 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private Vector2 m_minMaxMoveSpeed;
     [SerializeField] private Rigidbody2D m_rigidbody;
-
     [SerializeField] private GameObject m_popupPrefab;
 
+    public Action OnDeath;
     private Transform m_target;
     private float m_moveSpeed;
 
@@ -46,14 +48,20 @@ public class Enemy : MonoBehaviour
         m_currentHealth -= _amount;
         if (m_currentHealth <= 0)
         {
-            int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
-            if (m_timeGainedOnDeath > 0)
-            {
-                SpawnPopup(m_timeGainedOnDeath);
-            }
-            LevelManager.Instance.AddTime(m_timeGainedOnDeath);
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
+        if (m_timeGainedOnDeath > 0)
+        {
+            SpawnPopup(m_timeGainedOnDeath);
+        }
+        LevelManager.Instance.AddTime(m_timeGainedOnDeath);
+        Destroy(gameObject);
+        OnDeath?.Invoke();
     }
 
     private void SpawnPopup(int _value)
