@@ -27,6 +27,11 @@ public class Survivor : MonoBehaviour
         HandleShoot();
     }
 
+    public void IncreaseFireRate()
+    {
+        m_fireFrequency -= 0.5f;
+    }
+
     private float m_fireTimer;
 
     private void CountFireTimer()
