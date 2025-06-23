@@ -106,7 +106,7 @@ public class PlayerController : Singleton<PlayerController>
             Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
             if (enemy != null)
             {
-                if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Head"))
+                if (hit.collider.gameObject.name == "Head")
                 {
                     enemy.ApplySlow(m_hitSlowDuration);
                     enemy.TakeDamage(m_damage * m_headshotMultiplier);
