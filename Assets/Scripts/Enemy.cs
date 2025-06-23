@@ -68,6 +68,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float _amount, bool _giveTime = true)
     {
         m_currentHealth -= _amount;
+        SpawnPopup(_amount.ToString(), Color.red);
+
         if (m_currentHealth <= 0)
         {
             Die(_giveTime);
@@ -89,14 +91,20 @@ public class Enemy : MonoBehaviour
         int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
         if (m_timeGainedOnDeath > 0)
         {
-            SpawnPopup(m_timeGainedOnDeath);
+            SpawnPopup("+" + m_timeGainedOnDeath.ToString());
         }
         LevelManager.I.AddTime(m_timeGainedOnDeath);
     }
 
-    private void SpawnPopup(int _value)
+    private void SpawnPopup(string _value)
     {
         Popup popup = Instantiate(m_popupPrefab, transform.position, Quaternion.identity).GetComponent<Popup>();
         popup.ShowPopup(_value);
+    }
+
+    private void SpawnPopup(string _value, Color _color)
+    {
+        Popup popup = Instantiate(m_popupPrefab, transform.position, Quaternion.identity).GetComponent<Popup>();
+        popup.ShowPopup(_value, _color);
     }
 }

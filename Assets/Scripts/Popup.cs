@@ -10,12 +10,22 @@ public class Popup : MonoBehaviour
     [SerializeField] private float m_maxHeight;
     [SerializeField] private bool m_destroyOnEnd;
 
-    public void ShowPopup(int _value)
+    public void ShowPopup(string _value)
     {
-        m_popUpText.text = _value.ToString();
+        m_popUpText.text = _value;
         m_canvasGroup.alpha = 1;
         StartCoroutine(nameof(StartMovingUp));
     }
+
+    public void ShowPopup(string _value, Color _color)
+    {
+        m_popUpText.color = _color;
+        m_popUpText.text = _value;
+        m_canvasGroup.alpha = 1;
+        StartCoroutine(nameof(StartMovingUp));
+    }
+
+
 
     private IEnumerator StartMovingUp()
     {
