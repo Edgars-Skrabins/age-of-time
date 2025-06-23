@@ -30,7 +30,6 @@ public class Survivor : MonoBehaviour
     public void IncreaseFireRate()
     {
         m_fireFrequency -= 1;
-        Debug.Log($"`Fire Rate` is now {m_fireFrequency}");
     }
 
     private float m_fireTimer;
