@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
         {
             return;
         }
-        LevelManager.Instance.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
+        LevelManager.I.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
         m_sliderFill.color = Color.magenta;
         m_sliderFillAccent.color = Color.magenta;
         m_currentTimeText.color = Color.magenta;
@@ -114,7 +114,7 @@ public class UIManager : MonoBehaviour
         {
             return;
         }
-        LevelManager.Instance.SetTimeReductionMultiplier(m_timeUnderflowDrainSpeed);
+        LevelManager.I.SetTimeReductionMultiplier(m_timeUnderflowDrainSpeed);
         m_sliderFill.color = Color.green;
         m_sliderFillAccent.color = Color.green;
         m_currentTimeText.color = Color.white;

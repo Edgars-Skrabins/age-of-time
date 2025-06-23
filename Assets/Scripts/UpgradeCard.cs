@@ -16,7 +16,7 @@ public abstract class UpgradeCard : MonoBehaviour
 
     public void Invoke_OnButtonClick()
     {
-        if (m_cost > LevelManager.Instance.GetTime())
+        if (m_cost > LevelManager.I.GetTime())
         {
             return;
         }

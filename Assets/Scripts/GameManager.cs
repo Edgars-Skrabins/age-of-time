@@ -6,24 +6,9 @@ public enum GameState
     MainMenu, Playing, Paused, Shop, GameOver
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    public static GameManager Instance;
-
     public GameState M_CurrentState { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Start()
     {
@@ -68,7 +53,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         ChangeState(GameState.Playing);
-        LevelManager.Instance.StartLevel();
+        LevelManager.I.StartLevel();
     }
 
     public void PauseGame()

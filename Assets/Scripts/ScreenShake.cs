@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class ScreenShake : MonoBehaviour
+public class ScreenShake : Singleton<ScreenShake>
 {
-    public static ScreenShake Instance { get; private set; }
-
     [SerializeField] private float m_traumaDecay;
     [SerializeField] private float m_maxShakeMagnitude;
 
@@ -11,14 +9,9 @@ public class ScreenShake : MonoBehaviour
     private float m_trauma;
     private Vector3 m_originalPosition;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
+        base.Awake();
         m_originalPosition = transform.localPosition;
     }
 

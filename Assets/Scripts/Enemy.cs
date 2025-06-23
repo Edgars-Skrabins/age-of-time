@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         m_currentHealth = m_maxHealth;
-        m_target = LevelManager.Instance.m_BaseTarget;
+        m_target = LevelManager.I.m_BaseTarget;
         m_moveSpeed = Random.Range(m_minMaxMoveSpeed.x, m_minMaxMoveSpeed.y);
     }
 
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if (_other.transform == m_target)
         {
-            LevelManager.Instance.RemoveTime(m_damage);
+            LevelManager.I.RemoveTime(m_damage);
             PlayerController.I.TriggerHitAnimation();
             Destroy(gameObject);
         }
@@ -91,7 +91,7 @@ public class Enemy : MonoBehaviour
         {
             SpawnPopup(m_timeGainedOnDeath);
         }
-        LevelManager.Instance.AddTime(m_timeGainedOnDeath);
+        LevelManager.I.AddTime(m_timeGainedOnDeath);
     }
 
     private void SpawnPopup(int _value)

@@ -16,7 +16,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void Update()
     {
-        GameState currentState = GameManager.Instance.M_CurrentState;
+        GameState currentState = GameManager.I.M_CurrentState;
 
         if (currentState == GameState.Playing && m_spawnRoutine == null)
         {
@@ -74,7 +74,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         while (true)
         {
-            float timeValue = LevelManager.Instance.GetGameTime();
+            float timeValue = LevelManager.I.GetGameTime();
             float minDelay = m_minSpawnDelayCurve.Evaluate(timeValue);
             float maxDelay = m_maxSpawnDelayCurve.Evaluate(timeValue);
             yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));

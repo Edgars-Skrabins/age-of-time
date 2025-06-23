@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
-    public static LevelManager Instance;
-
     [SerializeField] private float m_maxTime;
     [SerializeField] private float m_currentTimeValue;
     [SerializeField] private float m_totalTimePassed;
@@ -11,19 +9,6 @@ public class LevelManager : MonoBehaviour
     public Transform m_BaseTarget;
 
     private float m_gameTime;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
 
     private void Update()
     {
@@ -64,14 +49,14 @@ public class LevelManager : MonoBehaviour
 
     private void UpdateGameTime()
     {
-        if (GameManager.Instance.M_CurrentState == GameState.Playing)
+        if (GameManager.I.M_CurrentState == GameState.Playing)
         {
             m_currentTimeValue -= Time.deltaTime * m_timeReductionMultiplier;
             UIManager.Instance.UpdateTime(m_currentTimeValue);
 
             if (m_currentTimeValue <= 0)
             {
-                GameManager.Instance.ChangeState(GameState.GameOver);
+                GameManager.I.ChangeState(GameState.GameOver);
             }
 
             if (m_currentTimeValue > m_maxTime)

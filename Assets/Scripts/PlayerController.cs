@@ -33,15 +33,15 @@ public class PlayerController : Singleton<PlayerController>
 
     public void HandleAnimation()
     {
-        if (GameManager.Instance.M_CurrentState == GameState.MainMenu)
+        if (GameManager.I.M_CurrentState == GameState.MainMenu)
         {
             m_playerAnimator.SetTrigger("Idle");
         }
-        if (GameManager.Instance.M_CurrentState == GameState.GameOver)
+        if (GameManager.I.M_CurrentState == GameState.GameOver)
         {
             m_playerAnimator.SetTrigger("Dead");
         }
-        if (GameManager.Instance.M_CurrentState == GameState.Playing)
+        if (GameManager.I.M_CurrentState == GameState.Playing)
         {
             m_playerAnimator.SetTrigger("Ready");
         }
@@ -111,7 +111,7 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
 
-        ScreenShake.Instance.AddTrauma(m_screenShakeAmount);
+        ScreenShake.I.AddTrauma(m_screenShakeAmount);
     }
 
     private void SpawnEffect(Vector3 mouseWorldPosition)

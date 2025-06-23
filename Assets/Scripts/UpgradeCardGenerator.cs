@@ -46,7 +46,7 @@ public class UpgradeCardGenerator : MonoBehaviour
 
     private void HandleCardPicked(int _upgradeCost)
     {
-        LevelManager.Instance.RemoveTime(_upgradeCost);
+        LevelManager.I.RemoveTime(_upgradeCost);
         DeleteAllSpawnedCards();
         ResetGenerationTimer();
     }
