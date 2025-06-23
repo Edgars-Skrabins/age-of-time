@@ -5613,7 +5613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_timeUnderflowDrainSpeed: 1
-  m_timeOverflowDrainSpeed: 0.8
+  m_timeOverflowDrainSpeed: 2.5
   m_menuUI: {fileID: 137950153}
   m_gameUI: {fileID: 1693786836}
   m_shopUI: {fileID: 963953775}
@@ -11330,18 +11330,18 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 2.8
-      inSlope: -0.0052
-      outSlope: -0.0052
+      value: 3
+      inSlope: -0.0054
+      outSlope: -0.0054
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 500
-      value: 0.2
-      inSlope: -0.0052
-      outSlope: -0.0052
+      value: 0.3
+      inSlope: -0.0054
+      outSlope: -0.0054
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -11354,18 +11354,18 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 3.3
-      inSlope: -0.006
-      outSlope: -0.006
+      value: 3.6
+      inSlope: -0.0064
+      outSlope: -0.0064
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 500
-      value: 0.3
-      inSlope: -0.006
-      outSlope: -0.006
+      value: 0.4
+      inSlope: -0.0064
+      outSlope: -0.0064
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

@@ -68,7 +68,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public bool CanIncreaseDamage()
     {
-        return m_damage < 50;
+        return m_damage < 35;
     }
 
     private void CountFireRateTimer()
