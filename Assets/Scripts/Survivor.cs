@@ -4,9 +4,25 @@ public class Survivor : MonoBehaviour
 {
     [SerializeField] private float m_damage;
     [SerializeField] private float m_fireFrequency;
+    [SerializeField] private Animator m_animator;
+
+    private void OnEnable()
+    {
+        int randomAnimationType = Random.Range(0, 100);
+        if (randomAnimationType < 51)
+        {
+            m_animator.SetInteger("Type", 0);
+        }
+        else
+        {
+            m_animator.SetInteger("Type", 1);
+        }
+    }
 
     private void Update()
     {
+        if (GameManager.I.M_CurrentState != GameState.Playing) return;
+
         CountFireTimer();
         HandleShoot();
     }
@@ -34,6 +50,7 @@ public class Survivor : MonoBehaviour
 
     private void Shoot()
     {
+        m_animator.SetTrigger("Shoot");
         EnemyManager.I.DamageRandomEnemy(m_damage);
     }
 }
