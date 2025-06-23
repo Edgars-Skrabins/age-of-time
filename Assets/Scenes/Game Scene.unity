@@ -6690,7 +6690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
-  m_survivorGOs:
+  m_survivors:
   - {fileID: 1151987934}
   - {fileID: 206177110}
   - {fileID: 263582657}
@@ -11005,6 +11005,7 @@ MonoBehaviour:
   - {fileID: 8547543647915381953, guid: dab6545bb76ce40008b4a09d6a38150b, type: 3}
   - {fileID: 6812650602321368360, guid: fb09fb310082f44dc9c4f83447327821, type: 3}
   - {fileID: 6097707234624977733, guid: bc422ea3d262c46d7a855f49046affdd, type: 3}
+  - {fileID: 4800822896957582028, guid: 8de5f1f4f06cf4eb7b3d2b84a31f64ed, type: 3}
 --- !u!1 &1679709927
 GameObject:
   m_ObjectHideFlags: 0
