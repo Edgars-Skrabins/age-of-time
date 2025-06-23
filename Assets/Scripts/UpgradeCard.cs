@@ -14,6 +14,11 @@ public abstract class UpgradeCard : MonoBehaviour
         m_costText.text = m_cost.ToString();
     }
 
+    public virtual bool ShouldBeAvailable()
+    {
+        return true;
+    }
+
     public void Invoke_OnButtonClick()
     {
         if (m_cost > LevelManager.I.GetTime())
@@ -24,7 +29,10 @@ public abstract class UpgradeCard : MonoBehaviour
         OnButtonClick?.Invoke(m_cost);
     }
 
-    public string GetDescription() { return m_description; }
+    public string GetDescription()
+    {
+        return m_description;
+    }
 
     protected abstract void DoUpgrade();
 }

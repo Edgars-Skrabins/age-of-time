@@ -14,4 +14,9 @@ public class SurvivorRecruitmentCenter : Singleton<SurvivorRecruitmentCenter>
         m_survivorGOs[^1].SetActive(true);
         m_survivorGOs.RemoveAt(m_survivorGOs.Count - 1);
     }
+
+    public bool CanRecruitSurvivor()
+    {
+        return m_survivorGOs.Count > 0;
+    }
 }

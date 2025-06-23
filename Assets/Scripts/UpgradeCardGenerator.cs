@@ -62,9 +62,12 @@ public class UpgradeCardGenerator : MonoBehaviour
 
     private void GenerateCards()
     {
+        List<UpgradeCard> m_upgradeCardPrefabsCopy = new List<UpgradeCard>(m_upgradeCardPrefabs);
+
         for (int i = 0; i < m_amountOfCardsToSpawn; i++)
         {
-            UpgradeCard upgradeCardPrefab = m_upgradeCardPrefabs[Random.Range(0, m_upgradeCardPrefabs.Length)];
+            UpgradeCard upgradeCardPrefab = m_upgradeCardPrefabsCopy[Random.Range(0, m_upgradeCardPrefabs.Length)];
+            m_upgradeCardPrefabsCopy.Remove(upgradeCardPrefab);
             UpgradeCard upgradeCard = Instantiate(upgradeCardPrefab, transform);
             m_spawnedUpgradeCards.Add(upgradeCard);
             upgradeCard.OnButtonClick += HandleCardPicked;

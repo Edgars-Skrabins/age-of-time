@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69100f1f4be00467099c8ae001d95465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cost: 90
+  m_cost: 80
   m_costText: {fileID: 450142878363588891}
   m_description: Recruit survivor
 --- !u!1 &6918895122306669647
