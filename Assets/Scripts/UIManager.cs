@@ -73,7 +73,6 @@ public class UIManager : MonoBehaviour
 
     public void InitializeGameUI(float _maxTimeValue)
     {
-        Debug.Log("Initializing Game UI");
         m_maxTime = _maxTimeValue;
         m_currentTimeSlider.minValue = 0f;
         m_currentTimeSlider.maxValue = _maxTimeValue;

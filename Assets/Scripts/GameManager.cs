@@ -27,22 +27,18 @@ public class GameManager : Singleton<GameManager>
 
             case GameState.Playing:
                 Time.timeScale = 1f;
-                Debug.Log("Game is now Playing.");
                 break;
 
             case GameState.Paused:
                 Time.timeScale = 0f;
-                Debug.Log("Game Paused.");
                 break;
 
             case GameState.Shop:
                 Time.timeScale = 0f;
-                Debug.Log("Shop Opened.");
                 break;
 
             case GameState.GameOver:
                 Time.timeScale = 0f;
-                Debug.Log("Game Over.");
                 break;
         }
 
