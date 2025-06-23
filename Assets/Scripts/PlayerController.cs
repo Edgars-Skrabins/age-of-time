@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -57,9 +56,19 @@ public class PlayerController : Singleton<PlayerController>
         m_fireRate -= _amount;
     }
 
+    public bool CanIncreaseFireRate()
+    {
+        return m_fireRate > 0.02f;
+    }
+
     public void IncreaseDamage(float _amount)
     {
         m_damage += _amount;
+    }
+
+    public bool CanIncreaseDamage()
+    {
+        return m_damage < 50;
     }
 
     private void CountFireRateTimer()
