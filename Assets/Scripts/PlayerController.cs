@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController>
@@ -5,6 +6,8 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Transform m_gunSpriteObject;
     [SerializeField] private GameObject m_gunEffectObject;
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
+    [SerializeField] private Animator m_playerAnimator;
+
     [SerializeField] private float m_damage;
     [SerializeField] private float m_hitSlowDuration;
     [SerializeField] private float m_headshotMultiplier;
@@ -26,6 +29,27 @@ public class PlayerController : Singleton<PlayerController>
         {
             HandleMouseClick();
         }
+    }
+
+    public void HandleAnimation()
+    {
+        if (GameManager.Instance.M_CurrentState == GameState.MainMenu)
+        {
+            m_playerAnimator.SetTrigger("Idle");
+        }
+        if (GameManager.Instance.M_CurrentState == GameState.GameOver)
+        {
+            m_playerAnimator.SetTrigger("Dead");
+        }
+        if (GameManager.Instance.M_CurrentState == GameState.Playing)
+        {
+            m_playerAnimator.SetTrigger("Ready");
+        }
+    }
+
+    public void TriggerHitAnimation()
+    {
+        m_playerAnimator.SetTrigger("Hurt");
     }
 
     public void IncreaseFireRate(float _amount)
@@ -65,6 +89,7 @@ public class PlayerController : Singleton<PlayerController>
 
         SpawnEffect(mouseWorldPosition);
         m_gunEffectObject.SetActive(true);
+        m_playerAnimator.SetTrigger("Shoot");
 
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero);
         if (hit.collider != null)

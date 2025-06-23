@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         }
 
         UIManager.Instance.ToggleUI(M_CurrentState);
+        PlayerController.I.HandleAnimation();
     }
 
     public void StartGame()

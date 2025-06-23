@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
         if (_other.transform == m_target)
         {
             LevelManager.Instance.RemoveTime(m_damage);
-
+            PlayerController.I.TriggerHitAnimation();
             Destroy(gameObject);
         }
     }
