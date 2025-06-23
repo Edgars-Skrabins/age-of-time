@@ -529,7 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxHealth: 35
   m_minTimeGainedOnDeath: 2
-  m_maxTimeGainedOnDeath: 10
+  m_maxTimeGainedOnDeath: 12
   m_currentHealth: 0
   m_damage: 8
   m_minMaxMoveSpeed: {x: 0.4, y: 0.9}

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SurvivorRecruitmentCenter : Singleton<SurvivorRecruitmentCenter>
 {
-    [FormerlySerializedAs("m_survivorGOs"), SerializeField] private List<Survivor> m_survivors;
+    [SerializeField] private List<Survivor> m_survivors;
     private int m_timesFireRateWasIncreased;
     private bool m_allSurvivorsAreActive;
 
@@ -28,6 +27,7 @@ public class SurvivorRecruitmentCenter : Singleton<SurvivorRecruitmentCenter>
         return m_survivors.Count > 0;
     }
 
+    [ContextMenu("'Increase fire rate'")]
     public void UpgradeSurvivorFireRate()
     {
         foreach (Survivor survivor in m_survivors)
@@ -39,6 +39,6 @@ public class SurvivorRecruitmentCenter : Singleton<SurvivorRecruitmentCenter>
 
     public bool CanIncreaseFireRate()
     {
-        return m_timesFireRateWasIncreased < 5 && m_allSurvivorsAreActive;
+        return m_timesFireRateWasIncreased < 7 && m_allSurvivorsAreActive;
     }
 }
