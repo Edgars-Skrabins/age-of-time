@@ -22,6 +22,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Update()
     {
+        if (GameManager.I.M_CurrentState != GameState.Playing) return;
+
         CountFireRateTimer();
 
         if (Input.GetMouseButton(0))
