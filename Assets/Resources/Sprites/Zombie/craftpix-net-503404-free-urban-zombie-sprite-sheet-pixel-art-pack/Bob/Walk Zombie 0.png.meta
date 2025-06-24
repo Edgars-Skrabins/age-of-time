@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4bd0989ed8144e668a38d1fc248d639
+guid: f4faf02312fd74446a805c29f1e4d4cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,106 +110,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead_0
+      name: Walk Zombie 0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2433d646648e64b3980499d6eb488b4e
-      internalID: 798829471
+      spriteID: fcacb57aac01943de828892ad5e897f5
+      internalID: 1689098530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_1
+      name: Walk Zombie 0_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 914a1e243aad94b34bc65a918ddd966b
-      internalID: -837270262
+      spriteID: c44d0e565506c48aba98cae098ecc659
+      internalID: 1748281039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_2
+      name: Walk Zombie 0_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57bde48e251614eb8bdc908f9a3bdb9f
-      internalID: -85156134
+      spriteID: 5a34536eaa7c74db9864e4370677ae39
+      internalID: -480765586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_3
+      name: Walk Zombie 0_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dc6e264be3f94b3f8aa7a9ee699b792
-      internalID: 672492062
+      spriteID: 82e114bd5781b408a9e320ff5264b67a
+      internalID: -636888894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_4
+      name: Walk Zombie 0_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c21a390e2381f4e6a8b831e4ab80a722
-      internalID: -2108013898
+      spriteID: 561b4c50817984e5c8856a7323e304d0
+      internalID: 1046544615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Zombie 0_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eada3dae30dd74f8db26f4d3fe1bbe85
+      internalID: -1300701933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Zombie 0_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1439d45f7934b17ad2aa4cc231bf5d
+      internalID: 1313225979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Zombie 0_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20a5679cb0f8439a869370522315217
+      internalID: 741180957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Zombie 0_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6978da08cafab4d2bb865eb27624b769
+      internalID: -1192674662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk Zombie 0_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 128
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf7ccebce87c43d4992cfd089804834
+      internalID: -126032897
       vertices: []
       indices: 
       edges: []
@@ -225,11 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dead_0: 798829471
-      Dead_1: -837270262
-      Dead_2: -85156134
-      Dead_3: 672492062
-      Dead_4: -2108013898
+      Walk Zombie 0_0: 1689098530
+      Walk Zombie 0_1: 1748281039
+      Walk Zombie 0_2: -480765586
+      Walk Zombie 0_3: -636888894
+      Walk Zombie 0_4: 1046544615
+      Walk Zombie 0_5: -1300701933
+      Walk Zombie 0_6: 1313225979
+      Walk Zombie 0_7: 741180957
+      Walk Zombie 0_8: -1192674662
+      Walk Zombie 0_9: -126032897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11706,7 +11706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
-  m_enemyPrefab: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+  m_enemyPrefab: {fileID: 1857693120108770833, guid: 49528eab10134436abb22c3e62559d51, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
   m_minSpawnDelayCurve:

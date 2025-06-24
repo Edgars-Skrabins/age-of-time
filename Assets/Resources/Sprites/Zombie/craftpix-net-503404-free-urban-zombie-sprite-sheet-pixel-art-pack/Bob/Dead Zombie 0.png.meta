@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5be6de4f11e094d6abebc2032fd7b686
+guid: a4bd0989ed8144e668a38d1fc248d639
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,106 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: Dead Zombie 0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f7cf01ea05994d81adc54b45b1c7066
-      internalID: 1135889018
+      spriteID: 6c42bf1576eef4beea57e98dbdf0d92e
+      internalID: -1703848092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1
+      name: Dead Zombie 0_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8c52e2d97f64842d3b6c2c086d24b234
-      internalID: -1112553930
+      spriteID: c0213461c7f0b4219ba6a53e2f25b458
+      internalID: -2010015113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_2
+      name: Dead Zombie 0_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77addcd22ae164ba78f4081eb728d2c5
-      internalID: -1232964207
+      spriteID: c9219962fbb344efeab4bd2a32789440
+      internalID: 26071782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_3
+      name: Dead Zombie 0_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fc65aed888a74570ae2b66192698c37
-      internalID: 384766341
+      spriteID: 4b2e4eefdc54c4ff28e8fede73d2caf2
+      internalID: -2017183396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_4
+      name: Dead Zombie 0_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1f0ca0fbc4d049d9abf6f08e0b33051
-      internalID: -460731442
+      spriteID: f31c728ca78b14fac80e27e58f57f85b
+      internalID: 1994030237
       vertices: []
       indices: 
       edges: []
@@ -225,11 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack_0: 1135889018
-      Attack_1: -1112553930
-      Attack_2: -1232964207
-      Attack_3: 384766341
-      Attack_4: -460731442
+      Dead Zombie 0_0: -1703848092
+      Dead Zombie 0_1: -2010015113
+      Dead Zombie 0_2: 26071782
+      Dead Zombie 0_3: -2017183396
+      Dead Zombie 0_4: 1994030237
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

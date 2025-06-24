@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: faef45ca1600f4e9f967f83edcf55c6d
+guid: 5be6de4f11e094d6abebc2032fd7b686
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,127 +110,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Attack Zombie 0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fec39da5fb35d481ba89f194994e131c
-      internalID: -1158851582
+      spriteID: bd2f37fe1a7e74697b085d92aa7c274a
+      internalID: -1145172617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Attack Zombie 0_1
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01a678afc089e4641be0584f891f027b
-      internalID: -602820127
+      spriteID: 9723afa1694ed4e53ba79d4004402613
+      internalID: 128829460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Attack Zombie 0_2
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8efa21a23884da5b67db874206026b
-      internalID: 1310974691
+      spriteID: 7ff51fbf9a11b49e8b23674c7ec8e5c7
+      internalID: -1596369539
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Attack Zombie 0_3
       rect:
         serializedVersion: 2
         x: 384
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93a926eb358eb4603a942ff52b531afc
-      internalID: -1190300341
+      spriteID: bcb1c272a6b664374a27e2fec0e80e82
+      internalID: 2108875789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: Attack Zombie 0_4
       rect:
         serializedVersion: 2
         x: 512
         y: 0
         width: 128
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eef28a3cdf34471aaf525a65fe6de42
-      internalID: 1304704040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02efa203978874bd89e86b9fda54b773
-      internalID: 1967288404
+      spriteID: 4bbf6bdd5f6774b1bbc95fa1405a5e75
+      internalID: -1735213974
       vertices: []
       indices: 
       edges: []
@@ -246,12 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Idle_0: -1158851582
-      Idle_1: -602820127
-      Idle_2: 1310974691
-      Idle_3: -1190300341
-      Idle_4: 1304704040
-      Idle_5: 1967288404
+      Attack Zombie 0_0: -1145172617
+      Attack Zombie 0_1: 128829460
+      Attack Zombie 0_2: -1596369539
+      Attack Zombie 0_3: 2108875789
+      Attack Zombie 0_4: -1735213974
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
