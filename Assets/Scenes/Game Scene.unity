@@ -5959,7 +5959,7 @@ MonoBehaviour:
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_playerAnimator: {fileID: 592488082}
   m_damage: 5
-  m_hitSlowDuration: 2
+  m_hitSlowDuration: 0.8
   m_headshotMultiplier: 2
   m_fireRate: 0.45
   m_screenShakeAmount: 1
@@ -8545,7 +8545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1134397657
 Transform:
   m_ObjectHideFlags: 0
@@ -11791,7 +11791,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
-  m_enemyPrefab: {fileID: 1857693120108770833, guid: 49528eab10134436abb22c3e62559d51, type: 3}
+  m_enemyPrefabs:
+  - {fileID: 1857693120108770833, guid: 49528eab10134436abb22c3e62559d51, type: 3}
+  - {fileID: 1857693120108770833, guid: 28a091b957d1d451a891fc4c073699aa, type: 3}
+  - {fileID: 1857693120108770833, guid: f157da1b5bd754ba090ed40671ce01f5, type: 3}
+  - {fileID: 1857693120108770833, guid: 1e9d52fa6db1d461a88de4829968383a, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
   m_minSpawnDelayCurve:

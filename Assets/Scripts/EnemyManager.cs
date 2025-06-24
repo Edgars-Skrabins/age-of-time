@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyManager : Singleton<EnemyManager>
 {
-    [SerializeField] private Enemy m_enemyPrefab;
+    [SerializeField] private Enemy[] m_enemyPrefabs;
+    private Enemy m_enemyPrefab;
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
 
@@ -84,6 +85,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void SpawnEnemy()
     {
+        m_enemyPrefab = m_enemyPrefabs[Random.Range(0, m_enemyPrefabs.Length)];
+
         Enemy newEnemy = Instantiate(m_enemyPrefab);
         m_spawnedEnemies.Add(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();

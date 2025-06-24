@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_animator
       value: 
@@ -95,7 +103,7 @@ PrefabInstance:
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 139836279, guid: faef45ca1600f4e9f967f83edcf55c6d, type: 3}
+      objectReference: {fileID: 1259963934, guid: d5ca96233e4084e71beae4843b7e7347, type: 3}
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1

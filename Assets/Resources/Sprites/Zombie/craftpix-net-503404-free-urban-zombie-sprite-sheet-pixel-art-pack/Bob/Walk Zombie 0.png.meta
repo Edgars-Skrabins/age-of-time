@@ -44,7 +44,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -124,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcacb57aac01943de828892ad5e897f5
-      internalID: 1689098530
+      spriteID: d0c3ee55d9ef141a7b21cb6852e0006f
+      internalID: 1020160210
       vertices: []
       indices: 
       edges: []
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c44d0e565506c48aba98cae098ecc659
-      internalID: 1748281039
+      spriteID: 174b919f4712844ddaea16aa8502d49c
+      internalID: 1539202272
       vertices: []
       indices: 
       edges: []
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5a34536eaa7c74db9864e4370677ae39
-      internalID: -480765586
+      spriteID: 540991c6ae20040c7ba6bf957a3a9951
+      internalID: 2135322207
       vertices: []
       indices: 
       edges: []
@@ -187,8 +187,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82e114bd5781b408a9e320ff5264b67a
-      internalID: -636888894
+      spriteID: 4bcbb6aaafb414524aed616304a154d1
+      internalID: 210329146
       vertices: []
       indices: 
       edges: []
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 561b4c50817984e5c8856a7323e304d0
-      internalID: 1046544615
+      spriteID: 3167193fee8444bf1935272fec87486d
+      internalID: 1166224138
       vertices: []
       indices: 
       edges: []
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eada3dae30dd74f8db26f4d3fe1bbe85
-      internalID: -1300701933
+      spriteID: 9574f7d9ce7f34bdfb41bcbbb5592a01
+      internalID: -282242887
       vertices: []
       indices: 
       edges: []
@@ -250,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d1439d45f7934b17ad2aa4cc231bf5d
-      internalID: 1313225979
+      spriteID: d73e009696ec6450cb7e0b9a6c7707ae
+      internalID: -2101924582
       vertices: []
       indices: 
       edges: []
@@ -271,8 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d20a5679cb0f8439a869370522315217
-      internalID: 741180957
+      spriteID: 982e3ae97302b43039ccb968ebb6827c
+      internalID: -1619276789
       vertices: []
       indices: 
       edges: []
@@ -292,8 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6978da08cafab4d2bb865eb27624b769
-      internalID: -1192674662
+      spriteID: 8b42a8d3250c14180ab5496fecbef3da
+      internalID: -1826229132
       vertices: []
       indices: 
       edges: []
@@ -313,8 +313,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdf7ccebce87c43d4992cfd089804834
-      internalID: -126032897
+      spriteID: b35524c3fa0d540dcbbaf316c5be6e02
+      internalID: 824102496
       vertices: []
       indices: 
       edges: []
@@ -330,16 +330,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Walk Zombie 0_0: 1689098530
-      Walk Zombie 0_1: 1748281039
-      Walk Zombie 0_2: -480765586
-      Walk Zombie 0_3: -636888894
-      Walk Zombie 0_4: 1046544615
-      Walk Zombie 0_5: -1300701933
-      Walk Zombie 0_6: 1313225979
-      Walk Zombie 0_7: 741180957
-      Walk Zombie 0_8: -1192674662
-      Walk Zombie 0_9: -126032897
+      Walk Zombie 0_0: 1020160210
+      Walk Zombie 0_1: 1539202272
+      Walk Zombie 0_2: 2135322207
+      Walk Zombie 0_3: 210329146
+      Walk Zombie 0_4: 1166224138
+      Walk Zombie 0_5: -282242887
+      Walk Zombie 0_6: -2101924582
+      Walk Zombie 0_7: -1619276789
+      Walk Zombie 0_8: -1826229132
+      Walk Zombie 0_9: 824102496
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
