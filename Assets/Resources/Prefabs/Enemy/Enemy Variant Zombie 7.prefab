@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minMaxMoveSpeed.y
-      value: 2.1
+      value: 2.4
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_maxTimeGainedOnDeath
