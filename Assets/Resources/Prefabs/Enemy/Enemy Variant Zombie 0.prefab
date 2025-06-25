@@ -9,44 +9,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 609769480539035993, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.18
+      propertyPath: m_LocalPosition.y
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_isBoss
-      value: 1
+      value: 1.991
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_animator
       value: 
       objectReference: {fileID: 7463195659601674562}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_maxHealth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_maxTimeGainedOnDeath
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_minTimeGainedOnDeath
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_animationToHitInterval
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
-      propertyPath: m_comboAnimationInterval
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2606653098941659932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
@@ -102,7 +82,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3694402926609882051, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Offset.y
-      value: 0.79014117
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734927472983108346, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3734927472983108346, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.y
@@ -115,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 7750608080663000572, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: e1daa321ff913433e85ed173438c1018, type: 2}
+      objectReference: {fileID: 9100000, guid: 6153be370e8054097adf1feef2f85e86, type: 2}
     - target: {fileID: 7871484346377905406, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -131,18 +115,22 @@ PrefabInstance:
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1068618180, guid: ad4cc3db19ee84ace87e7b0155a7e9fe, type: 3}
+      objectReference: {fileID: 139836279, guid: faef45ca1600f4e9f967f83edcf55c6d, type: 3}
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8573825658395940932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_Radius
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573825658395940932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Offset.y
-      value: 1.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant Zombie 5
+      value: Enemy Variant Zombie 0
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer

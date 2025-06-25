@@ -11,6 +11,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
+    [SerializeField] private float m_bossEnemySpawnRate;
 
     [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
     [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
@@ -96,7 +97,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(m_bossEnemySpawnRate);
             SpawnEnemyBoss();
         }
     }

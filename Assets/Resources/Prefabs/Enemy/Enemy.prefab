@@ -202,6 +202,7 @@ Transform:
   - {fileID: 2926087702519444496}
   - {fileID: 92717712971734791}
   - {fileID: 3805076621023568194}
+  - {fileID: 2943366947990783909}
   m_Father: {fileID: 3470646591566625919}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7986477788788419287
@@ -301,14 +302,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3289782019215247283}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 657806047802147257}
   - {fileID: 609769480539035993}
-  m_Father: {fileID: 3470646591566625919}
+  m_Father: {fileID: 3734927472983108346}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5012363023782150661
 GameObject:
@@ -560,7 +561,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3734927472983108346}
-  - {fileID: 2943366947990783909}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &9137906982127061533
@@ -607,6 +607,11 @@ MonoBehaviour:
   m_maxTimeGainedOnDeath: 12
   m_currentHealth: 0
   m_damage: 8
+  m_attackInterval: 1.5
+  m_isBoss: 0
+  m_animationToHitInterval: 0
+  m_comboAnimationInterval: 0
   m_minMaxMoveSpeed: {x: 0.4, y: 0.9}
   m_rigidbody: {fileID: 9137906982127061533}
   m_popupPrefab: {fileID: 7057120847238521341, guid: 2709bd892d48647faa45d507e101c4b5, type: 3}
+  m_animator: {fileID: 0}

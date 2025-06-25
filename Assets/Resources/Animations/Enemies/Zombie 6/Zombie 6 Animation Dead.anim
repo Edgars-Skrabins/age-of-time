@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zombie 5 Animation Attack0
+  m_Name: Zombie 6 Animation Dead
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,15 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1670119261, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+      value: {fileID: 1272403763, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
     - time: 0.125
-      value: {fileID: 971605016, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+      value: {fileID: 1721017903, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
     - time: 0.25
-      value: {fileID: 1585277652, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+      value: {fileID: -1113753906, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
     - time: 0.375
-      value: {fileID: -538786735, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+      value: {fileID: 1741319816, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
     - time: 0.5
-      value: {fileID: -165269026, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+      value: {fileID: 1249396530, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -52,11 +52,11 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1670119261, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
-    - {fileID: 971605016, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
-    - {fileID: 1585277652, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
-    - {fileID: -538786735, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
-    - {fileID: -165269026, guid: 6e5c30252ba53448b84c183cccfec44d, type: 3}
+    - {fileID: 1272403763, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
+    - {fileID: 1721017903, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
+    - {fileID: -1113753906, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
+    - {fileID: 1741319816, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
+    - {fileID: 1249396530, guid: a4a3ab82247104c89a14b025f6a902a5, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
