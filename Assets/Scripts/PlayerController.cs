@@ -101,6 +101,7 @@ public class PlayerController : Singleton<PlayerController>
         SpawnEffect(mouseWorldPosition);
         m_gunEffectObject.SetActive(true);
         m_playerAnimator.SetTrigger("Shoot");
+        AudioManager.I.PlaySound("SFX_ShotgunFire");
 
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero);
         if (hit.collider != null)

@@ -20,24 +20,22 @@ public class AudioData
 public class AudioManager : Singleton<AudioManager>
 {
     [Header("Mixer Settings")]
-    [SerializeField]
-    private AudioMixer m_mixer;
-    [SerializeField]
-    private AudioMixerGroup m_musicChannel, m_sfxChannel;
+    [SerializeField] private AudioMixer m_mixer;
+    [SerializeField] private AudioMixerGroup m_musicChannel, m_sfxChannel;
 
-    public string m_musicVolumeParameter = "MusicVolume";
-    public string m_sfxVolumeParameter = "SFXVolume";
+    [SerializeField] private string m_musicVolumeParameter = "MusicVolume";
+    [SerializeField] private string m_sfxVolumeParameter = "SFXVolume";
 
     [Header("UI Settings")]
-    public Slider m_musicVolumeSlider;
-    public Slider m_sfxVolumeSlider;
+    [SerializeField] private Slider m_musicVolumeSlider;
+    [SerializeField] private Slider m_sfxVolumeSlider;
+    [SerializeField] private Toggle m_jazzMode;
 
     private float m_musicVolume;
     private float m_sfxVolume;
 
     [Header("Audio SFX Settings")]
-    [SerializeField]
-    private List<AudioData> m_audioDataList;
+    [SerializeField] private List<AudioData> m_audioDataList;
 
     private static List<GameObject> m_audioSourceObjects;
 
@@ -148,7 +146,6 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(string _name)
     {
-        Debug.Log("Playing Sound: " + _name);
         AudioData sfxStats = GetAudioSFXByName(_name);
         AudioSource source = GetAudioSource(_name);
         if (source)
@@ -158,10 +155,6 @@ public class AudioManager : Singleton<AudioManager>
                 source.pitch = Random.Range(sfxStats.randomizePitchValues.x, sfxStats.randomizePitchValues.y);
             }
             source.Play();
-        }
-        else
-        {
-            Debug.Log("Sound Not Found: " + _name);
         }
     }
 
@@ -189,6 +182,35 @@ public class AudioManager : Singleton<AudioManager>
         if (source && source.isPlaying)
         {
             source.Stop();
+        }
+    }
+
+    public bool JazzMode()
+    {
+        return m_jazzMode.isOn;
+    }
+
+    public void ToggleJazzMode()
+    {
+        StopSound("BGM_MainMenu");
+        StopSound("BGM_JazzMainMenu");
+        StopSound("BGM_GameMusic");
+        StopSound("BGM_JazzGameMusic");
+
+        if (GameManager.I.M_CurrentState == GameState.MainMenu)
+        {
+            if (!JazzMode()) PlaySound("BGM_MainMenu");
+            else { PlaySound("BGM_JazzMainMenu"); }
+        }
+        else if (GameManager.I.M_CurrentState == GameState.Playing)
+        {
+            if (!JazzMode()) PlaySound("BGM_GameMusic");
+            else { PlaySound("BGM_JazzGameMusic"); }
+        }
+        else if (GameManager.I.M_CurrentState == GameState.GameOver)
+        {
+            //if (!AudioManager.I.JazzMode()) AudioManager.I.PlaySound("BGM_GameMusic");
+            //else { AudioManager.I.PlaySound("BGM_JazzGameMusic"); }
         }
     }
 }

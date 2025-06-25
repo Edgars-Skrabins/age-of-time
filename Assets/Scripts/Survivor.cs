@@ -56,6 +56,7 @@ public class Survivor : MonoBehaviour
     private void Shoot()
     {
         m_animator.SetTrigger("Shoot");
+        AudioManager.I.PlaySound("SFX_SurvivorShot");
         EnemyManager.I.DamageRandomEnemy(m_damage);
     }
 }

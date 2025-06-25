@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     [SerializeField] private float shakeMagnitude = 10f;
     [SerializeField] private float shakeSpeed = 50f;
@@ -45,5 +45,10 @@ public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
             yield return null;
         }
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        AudioManager.I.PlaySound("SFX_Click");
     }
 }

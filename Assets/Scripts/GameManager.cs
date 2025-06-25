@@ -48,8 +48,11 @@ public class GameManager : Singleton<GameManager>
     {
         ChangeState(GameState.Playing);
         AudioManager.I.StopSound("BGM_MainMenu");
-        AudioManager.I.PlaySound("BGM_GameMusic");
+        AudioManager.I.StopSound("BGM_JazzMainMenu");
+        AudioManager.I.PlaySound("SFX_ShotgunCock");
         LevelManager.I.StartLevel();
+        if (!AudioManager.I.JazzMode()) AudioManager.I.PlaySound("BGM_GameMusic");
+        else { AudioManager.I.PlaySound("BGM_JazzGameMusic"); }
     }
 
     public void PauseGame()
