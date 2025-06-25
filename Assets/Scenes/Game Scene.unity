@@ -14043,7 +14043,30 @@ MonoBehaviour:
   - {fileID: 1857693120108770833, guid: 99e417ab309f64da5b9c2aa16aef4d77, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
-  m_bossEnemySpawnRate: 30
+  m_bossSpawnRateCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 30
+      inSlope: -0.045833334
+      outSlope: -0.045833334
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 480
+      value: 8
+      inSlope: -0.045833334
+      outSlope: -0.045833334
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   m_minSpawnDelayCurve:
     serializedVersion: 2
     m_Curve:

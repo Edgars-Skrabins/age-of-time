@@ -11,8 +11,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
-    [SerializeField] private float m_bossEnemySpawnRate;
 
+    [SerializeField] private AnimationCurve m_bossSpawnRateCurve;
     [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
     [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
 
@@ -29,7 +29,6 @@ public class EnemyManager : Singleton<EnemyManager>
             m_spawnRoutine = StartCoroutine(SpawnEnemiesLoop());
             m_bossSpawnRoutine = StartCoroutine(SpawnBossEnemiesLoop());
         }
-
 
         else if (currentState != GameState.Playing && m_spawnRoutine != null)
         {
@@ -97,7 +96,8 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         while (true)
         {
-            yield return new WaitForSeconds(m_bossEnemySpawnRate);
+            float timeValue = LevelManager.I.GetGameTime();
+            yield return new WaitForSeconds(m_bossSpawnRateCurve.Evaluate(timeValue));
             SpawnEnemyBoss();
         }
     }
