@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_animator
       value: 
       objectReference: {fileID: 7463195659601674562}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_animationToHitInterval
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2606653098941659932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
       value: 7

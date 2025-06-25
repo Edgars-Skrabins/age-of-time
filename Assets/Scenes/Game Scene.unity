@@ -11796,6 +11796,8 @@ MonoBehaviour:
   - {fileID: 1857693120108770833, guid: 28a091b957d1d451a891fc4c073699aa, type: 3}
   - {fileID: 1857693120108770833, guid: f157da1b5bd754ba090ed40671ce01f5, type: 3}
   - {fileID: 1857693120108770833, guid: 1e9d52fa6db1d461a88de4829968383a, type: 3}
+  m_bossEnemyPrefabs:
+  - {fileID: 1857693120108770833, guid: 759188d773a9d4997bea9d011c251681, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
   m_minSpawnDelayCurve:

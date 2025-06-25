@@ -11,7 +11,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_currentHealth;
     [SerializeField] private float m_damage;
     [SerializeField] private float m_attackInterval = 1.5f;
-
+    [SerializeField] private bool m_isBoss;
+    [SerializeField] private float m_animationToHitInterval;
+    [SerializeField] private float m_comboAnimationInterval;
     [SerializeField] private Vector2 m_minMaxMoveSpeed;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private GameObject m_popupPrefab;
@@ -53,8 +55,7 @@ public class Enemy : MonoBehaviour
         Vector2 direction = ((Vector2)m_target.position - m_rigidbody.position).normalized;
         if (m_isSlowed)
         {
-            //m_rigidbody.velocity = direction * (m_moveSpeed * 0.5f);
-            m_rigidbody.velocity = Vector2.zero;
+            m_rigidbody.velocity = direction * (m_moveSpeed * 0.5f);
             return;
 
         }
@@ -88,10 +89,12 @@ public class Enemy : MonoBehaviour
     {
         m_currentHealth -= _amount;
         SpawnPopup(_amount.ToString(), Color.red);
+        m_rigidbody.velocity = Vector2.zero;
 
         if (m_currentHealth <= 0)
         {
             m_animator.SetBool("Walking", false);
+            StopCoroutine(AttackLoop()); // Just in case
             Die(_giveTime);
         }
         else
@@ -118,7 +121,14 @@ public class Enemy : MonoBehaviour
     private void StartAttack()
     {
         m_isAttacking = true;
-        StartCoroutine(AttackLoop());
+        if (!m_isBoss)
+        {
+            StartCoroutine(AttackLoop());
+        }
+        else
+        {
+            StartCoroutine(ComboAttackLoop());
+        }
     }
 
     private void GiveTime()
@@ -145,12 +155,38 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator AttackLoop()
     {
+        m_rigidbody.velocity = Vector2.zero;
         while (!m_isDead && m_target != null)
         {
-            m_rigidbody.velocity = Vector2.zero;
             m_animator.SetTrigger("Attack");
-            LevelManager.I.RemoveTime(m_damage);
+
+            yield return new WaitForSeconds(m_animationToHitInterval);
+
             PlayerController.I.TriggerHitAnimation();
+            LevelManager.I.RemoveTime(m_damage);
+
+            yield return new WaitForSeconds(m_attackInterval);
+        }
+    }
+
+    private IEnumerator ComboAttackLoop()
+    {
+        m_rigidbody.velocity = Vector2.zero;
+        while (!m_isDead && m_target != null)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                m_animator.SetTrigger("Attack" + i);
+
+                yield return new WaitForSeconds(m_animationToHitInterval);
+
+                PlayerController.I.TriggerHitAnimation();
+                LevelManager.I.RemoveTime(m_damage);
+                if (i < 2)
+                {
+                    yield return new WaitForSeconds(m_comboAnimationInterval);
+                }
+            }
             yield return new WaitForSeconds(m_attackInterval);
         }
     }

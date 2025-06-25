@@ -10,20 +10,44 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 609769480539035993, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.16
+      value: 0.18
       objectReference: {fileID: 0}
     - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.11
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 657806047802147257, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_isBoss
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_animator
       value: 
       objectReference: {fileID: 7463195659601674562}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_maxHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_maxTimeGainedOnDeath
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_minTimeGainedOnDeath
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_animationToHitInterval
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_comboAnimationInterval
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2606653098941659932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -91,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 7750608080663000572, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 7638c1ca6b57d40aa9a2076d614c00bc, type: 2}
+      objectReference: {fileID: 9100000, guid: d97034e6846d84956b6ecbaf8cb0ddeb, type: 2}
     - target: {fileID: 7871484346377905406, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -107,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1105453516, guid: afc7230a0292046d799f75b14afbb165, type: 3}
+      objectReference: {fileID: 1068618180, guid: ad4cc3db19ee84ace87e7b0155a7e9fe, type: 3}
     - target: {fileID: 7986477788788419287, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -118,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant Zombie 3
+      value: Enemy Variant Zombie 6
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer

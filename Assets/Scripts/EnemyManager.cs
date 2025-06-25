@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private Enemy[] m_enemyPrefabs;
+    [SerializeField] private Enemy[] m_bossEnemyPrefabs;
     private Enemy m_enemyPrefab;
+    private Enemy m_bossEnemyPrefab;
+
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
 
@@ -14,6 +17,7 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
+    private Coroutine m_bossSpawnRoutine;
 
     private void Update()
     {
@@ -22,10 +26,15 @@ public class EnemyManager : Singleton<EnemyManager>
         if (currentState == GameState.Playing && m_spawnRoutine == null)
         {
             m_spawnRoutine = StartCoroutine(SpawnEnemiesLoop());
+            m_bossSpawnRoutine = StartCoroutine(SpawnBossEnemiesLoop());
         }
+
+
         else if (currentState != GameState.Playing && m_spawnRoutine != null)
         {
             StopCoroutine(m_spawnRoutine);
+            StopCoroutine(m_bossSpawnRoutine);
+            m_bossSpawnRoutine = null;
             m_spawnRoutine = null;
         }
     }
@@ -83,6 +92,15 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    private IEnumerator SpawnBossEnemiesLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(10f);
+            SpawnEnemyBoss();
+        }
+    }
+
     private void SpawnEnemy()
     {
         m_enemyPrefab = m_enemyPrefabs[Random.Range(0, m_enemyPrefabs.Length)];
@@ -93,6 +111,15 @@ public class EnemyManager : Singleton<EnemyManager>
         newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
     }
 
+    private void SpawnEnemyBoss()
+    {
+        m_bossEnemyPrefab = m_bossEnemyPrefabs[Random.Range(0, m_bossEnemyPrefabs.Length)];
+
+        Enemy newEnemy = Instantiate(m_bossEnemyPrefab);
+        m_spawnedEnemies.Add(newEnemy);
+        newEnemy.transform.position = GetRandomSpawnPoint();
+        newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+    }
 
     private Vector3 GetRandomSpawnPoint()
     {
