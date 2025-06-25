@@ -1,9 +1,10 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    MainMenu, Playing, Paused, Shop, GameOver
+    MainMenu, Playing, Paused, GameOver
 }
 
 public class GameManager : Singleton<GameManager>
@@ -31,10 +32,6 @@ public class GameManager : Singleton<GameManager>
                 break;
 
             case GameState.Paused:
-                Time.timeScale = 0f;
-                break;
-
-            case GameState.Shop:
                 Time.timeScale = 0f;
                 break;
 
@@ -71,10 +68,20 @@ public class GameManager : Singleton<GameManager>
     {
         ChangeState(GameState.GameOver);
     }
-
+    public void RetryLevel()
+    {
+        StartCoroutine(nameof(RetryGameCO));
+    }
     public void RestartLevel()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private IEnumerator RetryGameCO()
+    {
+        RestartLevel();
+        yield return new WaitForSecondsRealtime(0.5f);
+        StartGame();
     }
 }

@@ -14,10 +14,9 @@ public class UIManager : MonoBehaviour
     [Header("UI Panels")]
     [SerializeField] private GameObject m_menuUI;
     [SerializeField] private GameObject m_gameUI;
-    [SerializeField] private GameObject m_shopUI;
     [SerializeField] private GameObject m_pauseUI;
     [SerializeField] private GameObject m_gameoverUI;
-    [SerializeField] private GameObject m_settingsUI;
+    //[SerializeField] private GameObject m_settingsUI;
     [Space]
     [SerializeField] private Slider m_currentTimeSlider;
     [SerializeField] private Image m_sliderFill;
@@ -30,7 +29,7 @@ public class UIManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -53,9 +52,6 @@ public class UIManager : MonoBehaviour
             case GameState.Paused:
                 m_pauseUI.SetActive(true);
                 break;
-            case GameState.Shop:
-                m_shopUI.SetActive(true);
-                break;
             case GameState.GameOver:
                 m_gameoverUI.SetActive(true);
                 break;
@@ -68,7 +64,6 @@ public class UIManager : MonoBehaviour
         m_gameoverUI.SetActive(false);
         m_menuUI.SetActive(false);
         m_pauseUI.SetActive(false);
-        m_shopUI.SetActive(false);
     }
 
     public void InitializeGameUI(float _maxTimeValue)
