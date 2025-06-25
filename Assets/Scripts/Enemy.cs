@@ -163,6 +163,7 @@ public class Enemy : MonoBehaviour
 
             yield return new WaitForSeconds(m_animationToHitInterval);
 
+            ScreenFlash.I.TriggerFlash();
             PlayerController.I.TriggerHitAnimation();
             LevelManager.I.RemoveTime(m_damage);
 
@@ -181,8 +182,10 @@ public class Enemy : MonoBehaviour
 
                 yield return new WaitForSeconds(m_animationToHitInterval);
 
+                ScreenFlash.I.TriggerFlash();
                 PlayerController.I.TriggerHitAnimation();
                 LevelManager.I.RemoveTime(m_damage);
+
                 if (i < 2)
                 {
                     yield return new WaitForSeconds(m_comboAnimationInterval);
