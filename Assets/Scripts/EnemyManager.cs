@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 public class EnemyManager : Singleton<EnemyManager>
 {
     [SerializeField] private Enemy m_clusterEnemyPrefab;
-    [SerializeField] private int m_minClusterSpawnRate;
-    [SerializeField] private int m_maxClusterSpawnRate;
+    [SerializeField] private AnimationCurve m_minClusterSpawnRate;
+    [SerializeField] private AnimationCurve m_maxClusterSpawnRate;
 
     [SerializeField] private AnimationCurve m_minClusterSize;
     [SerializeField] private AnimationCurve m_maxClusterSize;
@@ -30,7 +30,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void Start()
     {
-        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate, m_maxClusterSpawnRate));
+        float gameTime = LevelManager.I.GetGameTime();
+        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate.Evaluate(gameTime), m_maxClusterSpawnRate.Evaluate(gameTime)));
     }
 
     private void Update()
@@ -137,8 +138,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void SpawnCluster()
     {
-        float timeValue = LevelManager.I.GetGameTime();
-        int amountOfEnemies = Random.Range((int)m_minClusterSize.Evaluate(timeValue), (int)m_maxClusterSize.Evaluate(timeValue));
+        float gameTime = LevelManager.I.GetGameTime();
+        int amountOfEnemies = Random.Range((int)m_minClusterSize.Evaluate(gameTime), (int)m_maxClusterSize.Evaluate(gameTime));
         for (int i = 0; i < amountOfEnemies; i++)
         {
             Enemy newEnemy = Instantiate(m_clusterEnemyPrefab);
@@ -146,7 +147,7 @@ public class EnemyManager : Singleton<EnemyManager>
             newEnemy.transform.position = GetRandomSpawnPoint();
             newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
         }
-        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate, m_maxClusterSpawnRate));
+        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate.Evaluate(gameTime), m_maxClusterSpawnRate.Evaluate(gameTime)));
     }
 
     private Vector3 GetRandomSpawnPoint()

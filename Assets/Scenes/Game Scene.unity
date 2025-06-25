@@ -17006,25 +17006,71 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
   m_clusterEnemyPrefab: {fileID: 1857693120108770833, guid: 327e38acfe5964a5f9f5691ceea6a13a, type: 3}
-  m_minClusterSpawnRate: 40
-  m_maxClusterSpawnRate: 60
-  m_minClusterSize:
+  m_minClusterSpawnRate:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 3
-      inSlope: 0.010416667
-      outSlope: 0.010416667
+      value: 40
+      inSlope: -0.058333334
+      outSlope: -0.058333334
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 480
-      value: 8
-      inSlope: 0.010416667
-      outSlope: 0.010416667
+      value: 12
+      inSlope: -0.058333334
+      outSlope: -0.058333334
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_maxClusterSpawnRate:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 40
+      inSlope: -0.05
+      outSlope: -0.05
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 480
+      value: 16
+      inSlope: -0.05
+      outSlope: -0.05
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_minClusterSize:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 3
+      inSlope: 0.014583333
+      outSlope: 0.014583333
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 480
+      value: 10
+      inSlope: 0.014583333
+      outSlope: 0.014583333
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -17038,17 +17084,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 5
-      inSlope: 0.020833334
-      outSlope: 0.020833334
+      inSlope: 0.022916667
+      outSlope: 0.022916667
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 480
-      value: 15
-      inSlope: 0.020833334
-      outSlope: 0.020833334
+      value: 16
+      inSlope: 0.022916667
+      outSlope: 0.022916667
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
