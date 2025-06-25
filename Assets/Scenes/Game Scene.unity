@@ -17143,17 +17143,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 3
-      inSlope: -0.0054
-      outSlope: -0.0054
+      inSlope: -0.005625
+      outSlope: -0.005625
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 500
+      time: 480
       value: 0.3
-      inSlope: -0.0054
-      outSlope: -0.0054
+      inSlope: -0.005625
+      outSlope: -0.005625
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -17167,17 +17167,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 3.6
-      inSlope: -0.0064
-      outSlope: -0.0064
+      inSlope: -0.0066666664
+      outSlope: -0.0066666664
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 500
+      time: 480
       value: 0.4
-      inSlope: -0.0064
-      outSlope: -0.0064
+      inSlope: -0.0066666664
+      outSlope: -0.0066666664
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
