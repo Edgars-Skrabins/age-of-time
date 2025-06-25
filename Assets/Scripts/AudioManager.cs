@@ -148,6 +148,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(string _name)
     {
+        Debug.Log("Playing Sound: " + _name);
         AudioData sfxStats = GetAudioSFXByName(_name);
         AudioSource source = GetAudioSource(_name);
         if (source)
@@ -157,6 +158,10 @@ public class AudioManager : Singleton<AudioManager>
                 source.pitch = Random.Range(sfxStats.randomizePitchValues.x, sfxStats.randomizePitchValues.y);
             }
             source.Play();
+        }
+        else
+        {
+            Debug.Log("Sound Not Found: " + _name);
         }
     }
 

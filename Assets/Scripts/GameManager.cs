@@ -13,6 +13,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         ChangeState(GameState.MainMenu);
+        AudioManager.I.PlaySound("BGM_MainMenu");
     }
 
     public void ChangeState(GameState _newState)
@@ -49,6 +50,8 @@ public class GameManager : Singleton<GameManager>
     public void StartGame()
     {
         ChangeState(GameState.Playing);
+        AudioManager.I.StopSound("BGM_MainMenu");
+        AudioManager.I.PlaySound("BGM_GameMusic");
         LevelManager.I.StartLevel();
     }
 

@@ -7493,7 +7493,23 @@ MonoBehaviour:
   m_sfxVolumeParameter: SFXVolume
   m_musicVolumeSlider: {fileID: 856233283}
   m_sfxVolumeSlider: {fileID: 1568387255}
-  m_audioDataList: []
+  m_audioDataList:
+  - name: BGM_MainMenu
+    audioClip: {fileID: 8300000, guid: 84fd3e98bb284462b9c22897f96be94e, type: 3}
+    volume: 0.5
+    isMusic: 1
+    randomizePitch: 0
+    randomizePitchValues: {x: 0, y: 0}
+    playOnAwake: 0
+    loop: 1
+  - name: BGM_GameMusic
+    audioClip: {fileID: 8300000, guid: bf4428d2d605c430f9f9a63a1cbc2d68, type: 3}
+    volume: 0.5
+    isMusic: 1
+    randomizePitch: 0
+    randomizePitchValues: {x: 0, y: 0}
+    playOnAwake: 0
+    loop: 1
 --- !u!4 &739599050
 Transform:
   m_ObjectHideFlags: 0
