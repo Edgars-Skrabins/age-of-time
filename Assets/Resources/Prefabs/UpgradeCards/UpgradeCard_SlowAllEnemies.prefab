@@ -144,7 +144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1235145db188746f79e68b9f88615ad5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c36ba8a2fa374c1b88a9fcc7454ed41, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cost: 25
   m_costText: {fileID: 450142878363588891}
-  m_description: Slow All Enemies
+  m_description: Slow all enemies
   m_slowDuration: 5
 --- !u!1 &6918895122306669647
 GameObject:
