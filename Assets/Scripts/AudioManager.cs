@@ -202,7 +202,7 @@ public class AudioManager : Singleton<AudioManager>
             if (!JazzMode()) PlaySound("BGM_MainMenu");
             else { PlaySound("BGM_JazzMainMenu"); }
         }
-        else if (GameManager.I.M_CurrentState == GameState.Playing)
+        else if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused)
         {
             if (!JazzMode()) PlaySound("BGM_GameMusic");
             else { PlaySound("BGM_JazzGameMusic"); }
