@@ -4,12 +4,15 @@ using UnityEngine.SceneManagement;
 
 public enum GameState
 {
-    MainMenu, Playing, Paused, GameOver
+    MainMenu,
+    Playing,
+    Paused,
+    GameOver
 }
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState M_CurrentState { get; private set; }
+    public GameState M_CurrentState {get; private set;}
 
     private void Start()
     {
@@ -51,30 +54,30 @@ public class GameManager : Singleton<GameManager>
         AudioManager.I.StopSound("BGM_JazzMainMenu");
         AudioManager.I.PlaySound("SFX_ShotgunCock");
         LevelManager.I.StartLevel();
-        if (!AudioManager.I.JazzMode()) AudioManager.I.PlaySound("BGM_GameMusic");
-        else { AudioManager.I.PlaySound("BGM_JazzGameMusic"); }
+
+        AudioManager.I.PlaySound(!AudioManager.I.JazzMode() ? "BGM_GameMusic" : "BGM_JazzGameMusic");
     }
 
     public void PauseGame()
     {
-        if (M_CurrentState == GameState.Playing)
-            ChangeState(GameState.Paused);
+        if (M_CurrentState == GameState.Playing) ChangeState(GameState.Paused);
     }
 
     public void ResumeGame()
     {
-        if (M_CurrentState == GameState.Paused)
-            ChangeState(GameState.Playing);
+        if (M_CurrentState == GameState.Paused) ChangeState(GameState.Playing);
     }
 
     public void EndGame()
     {
         ChangeState(GameState.GameOver);
     }
+
     public void RetryLevel()
     {
         StartCoroutine(nameof(RetryGameCO));
     }
+
     public void RestartLevel()
     {
         Time.timeScale = 1f;

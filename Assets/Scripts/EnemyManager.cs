@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyManager : Singleton<EnemyManager>
 {
+    [SerializeField] private Enemy m_clusterEnemyPrefab;
+    [SerializeField] private int m_minClusterSpawnRate;
+    [SerializeField] private int m_maxClusterSpawnRate;
+
+    [SerializeField] private AnimationCurve m_minClusterSize;
+    [SerializeField] private AnimationCurve m_maxClusterSize;
+
     [SerializeField] private Enemy[] m_enemyPrefabs;
     [SerializeField] private Enemy[] m_bossEnemyPrefabs;
     private Enemy m_enemyPrefab;
@@ -19,6 +27,11 @@ public class EnemyManager : Singleton<EnemyManager>
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
     private Coroutine m_bossSpawnRoutine;
+
+    private void Start()
+    {
+        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate, m_maxClusterSpawnRate));
+    }
 
     private void Update()
     {
@@ -75,7 +88,7 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (enemy)
             {
-                enemy.TakeDamage(9999, false);
+                enemy.TakeDamage(999, false);
             }
         }
     }
@@ -120,6 +133,20 @@ public class EnemyManager : Singleton<EnemyManager>
         m_spawnedEnemies.Add(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
         newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+    }
+
+    private void SpawnCluster()
+    {
+        float timeValue = LevelManager.I.GetGameTime();
+        int amountOfEnemies = Random.Range((int)m_minClusterSize.Evaluate(timeValue), (int)m_maxClusterSize.Evaluate(timeValue));
+        for (int i = 0; i < amountOfEnemies; i++)
+        {
+            Enemy newEnemy = Instantiate(m_clusterEnemyPrefab);
+            m_spawnedEnemies.Add(newEnemy);
+            newEnemy.transform.position = GetRandomSpawnPoint();
+            newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+        }
+        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate, m_maxClusterSpawnRate));
     }
 
     private Vector3 GetRandomSpawnPoint()

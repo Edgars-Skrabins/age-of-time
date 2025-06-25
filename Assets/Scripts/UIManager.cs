@@ -78,7 +78,13 @@ public class UIManager : MonoBehaviour
     public void UpdateTime(float _value)
     {
         m_currentTimeText.text = Mathf.FloorToInt(_value).ToString();
-        if (_value > m_maxTime)
+        if (_value > 200)
+        {
+            SetCrazyOverFlowSettings();
+            return;
+        }
+
+        if (_value > m_maxTime && _value < 200)
         {
             SetTimeOverflowSettings();
             return;
@@ -87,13 +93,18 @@ public class UIManager : MonoBehaviour
         SetTimeUnderflowSettings();
     }
 
+    private void SetCrazyOverFlowSettings()
+    {
+        LevelManager.I.SetTimeReductionMultiplier(15);
+    }
+
     private void SetTimeOverflowSettings()
     {
+        LevelManager.I.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
         if (m_hasTimeOverflowed)
         {
             return;
         }
-        LevelManager.I.SetTimeReductionMultiplier(m_timeOverflowDrainSpeed);
         m_sliderFill.color = Color.magenta;
         m_sliderFillAccent.color = Color.magenta;
         m_currentTimeText.color = Color.magenta;

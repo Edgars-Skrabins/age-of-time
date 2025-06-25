@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_damage
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_isBoss
@@ -122,23 +122,23 @@ PrefabInstance:
       objectReference: {fileID: 7463195659601674562}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_maxHealth
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minMaxMoveSpeed.x
-      value: 1.6
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minMaxMoveSpeed.y
-      value: 1.7
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_maxTimeGainedOnDeath
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minTimeGainedOnDeath
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_animationToHitInterval
@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant Zombie 6
+      value: Enemy Variant Zombie 7
       objectReference: {fileID: 0}
     - target: {fileID: 9047798798314504427, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
