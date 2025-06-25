@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4541cda1d58ab49bca430358c1c8e19a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_cost: 30
+  m_cost: 45
   m_costText: {fileID: 450142878363588891}
   m_description: Increase Rate of Fire
   m_fireRateIncrease: 0.03
