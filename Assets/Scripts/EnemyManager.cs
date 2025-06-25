@@ -27,12 +27,7 @@ public class EnemyManager : Singleton<EnemyManager>
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
     private Coroutine m_bossSpawnRoutine;
-
-    private void Start()
-    {
-        float gameTime = LevelManager.I.GetGameTime();
-        Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate.Evaluate(gameTime), m_maxClusterSpawnRate.Evaluate(gameTime)));
-    }
+    private bool m_hasClusterSpawned;
 
     private void Update()
     {
@@ -124,6 +119,13 @@ public class EnemyManager : Singleton<EnemyManager>
         m_spawnedEnemies.Add(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
         newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+        if (!m_hasClusterSpawned)
+        {
+            float gameTime = LevelManager.I.GetGameTime();
+            Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate.Evaluate(gameTime), m_maxClusterSpawnRate.Evaluate(gameTime)));
+            m_hasClusterSpawned = true;
+            ;
+        }
     }
 
     private void SpawnEnemyBoss()
