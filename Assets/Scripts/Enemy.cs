@@ -111,6 +111,7 @@ public class Enemy : MonoBehaviour
         m_animator.SetTrigger("Dead");
         if (_giveTime)
         {
+            ScoreManager.I.AddKill();
             GiveTime();
         }
         Destroy(gameObject, 3f);

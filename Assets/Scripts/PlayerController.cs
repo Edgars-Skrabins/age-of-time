@@ -113,6 +113,7 @@ public class PlayerController : Singleton<PlayerController>
                 {
                     enemy.ApplySlow(m_hitSlowDuration);
                     enemy.TakeDamage(m_damage * m_headshotMultiplier);
+                    ScoreManager.I.AddHeadshot();
                 }
                 else
                 {

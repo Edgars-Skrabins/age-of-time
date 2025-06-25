@@ -12,7 +12,10 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Update()
     {
-        CountGameTime();
+        if (GameManager.I.M_CurrentState == GameState.Playing)
+        {
+            CountGameTime();
+        }
     }
 
     public float GetGameTime()
