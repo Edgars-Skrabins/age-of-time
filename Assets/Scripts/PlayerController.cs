@@ -40,6 +40,7 @@ public class PlayerController : Singleton<PlayerController>
         }
         if (GameManager.I.M_CurrentState == GameState.GameOver)
         {
+            VoiceoverManager.I.Play("Player_Death");
             m_playerAnimator.SetTrigger("Dead");
         }
         if (GameManager.I.M_CurrentState == GameState.Playing)
@@ -51,6 +52,7 @@ public class PlayerController : Singleton<PlayerController>
     public void TriggerHitAnimation()
     {
         m_playerAnimator.SetTrigger("Hurt");
+        VoiceoverManager.I.Play("Player_Hurt");
     }
 
     public void IncreaseFireRate(float _amount)

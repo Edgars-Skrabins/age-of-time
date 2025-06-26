@@ -12,12 +12,13 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState M_CurrentState {get; private set;}
+    public GameState M_CurrentState { get; private set; }
 
     private void Start()
     {
         ChangeState(GameState.MainMenu);
         AudioManager.I.PlaySound("BGM_MainMenu");
+        VoiceoverManager.I.Play("Menu_Intro");
     }
 
     public void ChangeState(GameState _newState)
@@ -54,8 +55,8 @@ public class GameManager : Singleton<GameManager>
         AudioManager.I.StopSound("BGM_JazzMainMenu");
         AudioManager.I.PlaySound("SFX_ShotgunCock");
         LevelManager.I.StartLevel();
-
-        AudioManager.I.PlaySound(!AudioManager.I.JazzMode() ? "BGM_GameMusic" : "BGM_JazzGameMusic");
+        VoiceoverManager.I.Play("Game_Intro");
+        AudioManager.I.PlaySound(!AudioManager.I.JazzMode() ? "BGM_GameMusic" + Random.Range(0, 2) : "BGM_JazzGameMusic");
     }
 
     public void PauseGame()

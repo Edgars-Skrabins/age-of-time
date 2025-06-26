@@ -49,6 +49,7 @@ public class UpgradeCardGenerator : MonoBehaviour
         LevelManager.I.RemoveTime(_upgradeCost);
         DeleteAllSpawnedCards();
         ResetGenerationTimer();
+        VoiceoverManager.I.Play("Player_Upgrade");
     }
 
     private void DeleteAllSpawnedCards()

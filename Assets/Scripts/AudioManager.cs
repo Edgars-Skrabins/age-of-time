@@ -154,23 +154,15 @@ public class AudioManager : Singleton<AudioManager>
             {
                 source.pitch = Random.Range(sfxStats.randomizePitchValues.x, sfxStats.randomizePitchValues.y);
             }
-            source.Play();
+            source.PlayOneShot(sfxStats.audioClip);
         }
     }
 
-    public void PlaySound(string _name, Vector3 _positon)
+    public void PlayMusic(string _name)
     {
-        AudioData sfxStats = GetAudioSFXByName(_name);
         AudioSource source = GetAudioSource(_name);
-
         if (source)
         {
-            if (sfxStats.randomizePitch)
-            {
-                source.pitch = Random.Range(sfxStats.randomizePitchValues.x, sfxStats.randomizePitchValues.y);
-            }
-            source.transform.position = _positon;
-            source.spatialBlend = 1f;
             source.Play();
         }
     }
@@ -194,7 +186,8 @@ public class AudioManager : Singleton<AudioManager>
     {
         StopSound("BGM_MainMenu");
         StopSound("BGM_JazzMainMenu");
-        StopSound("BGM_GameMusic");
+        StopSound("BGM_GameMusic0");
+        StopSound("BGM_GameMusic1");
         StopSound("BGM_JazzGameMusic");
 
         if (GameManager.I.M_CurrentState == GameState.MainMenu)
@@ -204,7 +197,7 @@ public class AudioManager : Singleton<AudioManager>
         }
         else if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused)
         {
-            if (!JazzMode()) PlaySound("BGM_GameMusic");
+            if (!JazzMode()) PlaySound("BGM_GameMusic" + Random.Range(0, 2));
             else { PlaySound("BGM_JazzGameMusic"); }
         }
         else if (GameManager.I.M_CurrentState == GameState.GameOver)
