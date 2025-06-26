@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
 
         if (m_currentHealth <= 0)
         {
+            VoiceoverManager.I.Play("Zombie_Dead", new Vector2(0.75f, 1.5f));
             m_animator.SetBool("Walking", false);
             StopCoroutine(AttackLoop()); // Just in case
             Die(_giveTime);
@@ -100,6 +101,7 @@ public class Enemy : MonoBehaviour
         else
         {
             m_animator.SetTrigger("Hurt");
+            VoiceoverManager.I.Play("Zombie_Hurt", new Vector2(0.75f, 1.5f));
         }
     }
 
@@ -160,6 +162,7 @@ public class Enemy : MonoBehaviour
         while (!m_isDead && m_target != null)
         {
             m_animator.SetTrigger("Attack");
+            VoiceoverManager.I.Play("Zombie_Attack", new Vector2(0.75f, 1.5f));
 
             yield return new WaitForSeconds(m_animationToHitInterval);
 
@@ -179,6 +182,7 @@ public class Enemy : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 m_animator.SetTrigger("Attack" + i);
+                VoiceoverManager.I.Play("Zombie_Attack", new Vector2(0.75f, 1.5f));
 
                 yield return new WaitForSeconds(m_animationToHitInterval);
 

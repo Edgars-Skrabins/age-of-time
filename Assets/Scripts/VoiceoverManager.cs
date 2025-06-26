@@ -39,6 +39,23 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
 
         if (group.clips.Length == 0) return;
 
+        voiceoverSource.pitch = 1;
+        AudioClip clip = group.clips[Random.Range(0, group.clips.Length)];
+        voiceoverSource.PlayOneShot(clip);
+        group.lastPlayTime = Time.unscaledTime;
+    }
+
+    public void Play(string key, Vector2 randomizeMinMax)
+    {
+        if (!voiceDict.TryGetValue(key, out VoiceoverGroup group)) return;
+
+        // Cooldown check
+        if (Time.unscaledTime - group.lastPlayTime < group.cooldown) return;
+
+        if (group.clips.Length == 0) return;
+
+        voiceoverSource.pitch = Random.Range(randomizeMinMax.x, randomizeMinMax.y);
+
         AudioClip clip = group.clips[Random.Range(0, group.clips.Length)];
         voiceoverSource.PlayOneShot(clip);
         group.lastPlayTime = Time.unscaledTime;

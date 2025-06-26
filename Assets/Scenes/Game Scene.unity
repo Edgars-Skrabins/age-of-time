@@ -6131,7 +6131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &188405752
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6461,7 +6461,7 @@ RectTransform:
   m_Father: {fileID: 631809337}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7064,6 +7064,58 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 68864a17c72bf444490efcf097602389, type: 3}
     cooldown: 0
     lastPlayTime: 0
+  - key: Zombie_Hurt
+    clips:
+    - {fileID: 8300000, guid: d6b2c9d4e4a8d454da6b3067ab461505, type: 3}
+    - {fileID: 8300000, guid: 78f2f0a3553f4466c88e4eb3e983373d, type: 3}
+    - {fileID: 8300000, guid: 38fbb3569629547e7a8462243e5eee00, type: 3}
+    - {fileID: 8300000, guid: 7100ab0b7dc46444b912793213a68806, type: 3}
+    - {fileID: 8300000, guid: e02d25e8164754f7cb654814bc88d99c, type: 3}
+    - {fileID: 8300000, guid: 34ab3761a5b54475496967caf1842228, type: 3}
+    - {fileID: 8300000, guid: c74b380dad0a749f29da50f408372c9d, type: 3}
+    - {fileID: 8300000, guid: a04fdbc331bbb4f5993ac4a80ba47ef3, type: 3}
+    - {fileID: 8300000, guid: 6b786d2d4a7eb41df97377d0b7b847ff, type: 3}
+    - {fileID: 8300000, guid: ae00da15f94a94b2fa56fd7dc71623ce, type: 3}
+    - {fileID: 8300000, guid: 61c0868ff97d4434aa68b29e5987b2cb, type: 3}
+    - {fileID: 8300000, guid: 433cf772469c4467bb4cb40f5f34f694, type: 3}
+    - {fileID: 8300000, guid: 5079f4723a6aa475d83aa4d0e9dbad40, type: 3}
+    - {fileID: 8300000, guid: 31147ae0a883e4bf7b08e3e717e99824, type: 3}
+    - {fileID: 8300000, guid: c031213051390440c92f73a334262c7a, type: 3}
+    - {fileID: 8300000, guid: c1aa09aa3302945a3ad14d65a4870960, type: 3}
+    - {fileID: 8300000, guid: 6bb0bad9c2d344c3d9772451b80558fb, type: 3}
+    cooldown: 1.5
+    lastPlayTime: 0
+  - key: Zombie_Dead
+    clips:
+    - {fileID: 8300000, guid: bdfa65248cdea429c85af979d99d446b, type: 3}
+    - {fileID: 8300000, guid: ed699d5b9a0204d54af6e557dc33f0d3, type: 3}
+    - {fileID: 8300000, guid: c5a5288118d394827b9aedad0f81917f, type: 3}
+    - {fileID: 8300000, guid: bbfb639cb7d4842a9a2f32dad98bf661, type: 3}
+    - {fileID: 8300000, guid: 1eb0a75c591cd46dd84018aa4db33bb4, type: 3}
+    - {fileID: 8300000, guid: af570d3eb19454bf29966042c96b5856, type: 3}
+    - {fileID: 8300000, guid: ed3cbaa0c55e749c59fbf708b534777b, type: 3}
+    - {fileID: 8300000, guid: 99714b4d8af5547098162675785bcf55, type: 3}
+    - {fileID: 8300000, guid: 580b12ce7296f4fa680b7e3d9de83540, type: 3}
+    - {fileID: 8300000, guid: 4ffbbf48e62424e2dbf2a5a03dcad88e, type: 3}
+    - {fileID: 8300000, guid: 1b80ddd05e7584237ae294fda47e051a, type: 3}
+    - {fileID: 8300000, guid: dbf97b89740014cc1960bdef1495d9e8, type: 3}
+    - {fileID: 8300000, guid: 059d128e2d747491e8b0003a6fa24b9e, type: 3}
+    - {fileID: 8300000, guid: c91a5cdf7d67040d9a32132f2417d4fe, type: 3}
+    - {fileID: 8300000, guid: bb48ec05d986a44f29c5005ed54a633e, type: 3}
+    - {fileID: 8300000, guid: 6e5ac90aa4ba2442681bee50be223954, type: 3}
+    cooldown: 1.5
+    lastPlayTime: 0
+  - key: Zombie_Attack
+    clips:
+    - {fileID: 8300000, guid: 929c0dbc066464a2b93a8f1375a7bd47, type: 3}
+    - {fileID: 8300000, guid: 13b7dcca8632247128c5e8e76688ae7a, type: 3}
+    - {fileID: 8300000, guid: 7dd0f27a855a040a0a26d051d7ce8b85, type: 3}
+    - {fileID: 8300000, guid: 571f40e9cb3404a0ca03f1bc090a1b8e, type: 3}
+    - {fileID: 8300000, guid: 43f92115af9f14ab1bb068411b9228bf, type: 3}
+    - {fileID: 8300000, guid: 9a762d7114cf34b7881fd918f27738b1, type: 3}
+    - {fileID: 8300000, guid: b61927468c5f8430eb477d8f44dd27bd, type: 3}
+    cooldown: 1.5
+    lastPlayTime: 0
 --- !u!4 &304739510
 Transform:
   m_ObjectHideFlags: 0
@@ -7656,9 +7708,9 @@ RectTransform:
   - {fileID: 1144667180}
   m_Father: {fileID: 602010442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 460, y: -515.625}
   m_SizeDelta: {x: 850, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &442455516
@@ -8995,7 +9047,7 @@ RectTransform:
   m_Father: {fileID: 1142847572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9447,9 +9499,9 @@ RectTransform:
   - {fileID: 1568387254}
   m_Father: {fileID: 602010442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 460, y: -389.375}
   m_SizeDelta: {x: 850, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &671120816
@@ -10437,8 +10489,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 869767999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.794, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 12.5}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10856,9 +10908,9 @@ RectTransform:
   - {fileID: 856233282}
   m_Father: {fileID: 602010442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 460, y: -263.125}
   m_SizeDelta: {x: 850, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &903291158
@@ -13856,7 +13908,7 @@ RectTransform:
   m_Father: {fileID: 1455876791}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14079,8 +14131,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 475960155}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.794, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 12.5}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14176,8 +14228,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 737530296}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.794, y: 0}
+  m_AnchorMax: {x: 0.794, y: 1}
   m_AnchoredPosition: {x: 0, y: 12.5}
   m_SizeDelta: {x: 100, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18451,9 +18503,9 @@ RectTransform:
   - {fileID: 1533511950}
   m_Father: {fileID: 602010442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 460, y: -641.875}
   m_SizeDelta: {x: 850, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857632414
