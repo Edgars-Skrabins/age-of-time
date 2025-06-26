@@ -72,6 +72,10 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+
+# Leaderboard API key
+/[Aa]ssets/[Ss]cripts/LeaderboardKey.cs
+
 .idea/
 Assets/Scripts/LeaderboardKey.cs.meta
 Assets/Scripts/LeaderboardKey.cs

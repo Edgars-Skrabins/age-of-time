@@ -9,14 +9,11 @@ using UnityEngine.SceneManagement;
 public class LeaderboardManager : MonoBehaviour
 {
     private string m_publicKey = LeaderboardKey.PUBLIC_KEY;
-
     [SerializeField] private Transform m_leaderboardContentTF;
     [SerializeField] private GameObject m_leaderboardEntryPrefab;
     [SerializeField] private GameObject m_leaderboardPanel, m_leaderboardSubmissionPanel, m_leaderboardSubmissionText;
     [SerializeField] private TMP_InputField m_playerNameInputField;
-
     [SerializeField] private int m_maxEntryCount = 30;
-
     private List<LeaderboardEntry> m_currentEntries;
 
     private void Start()
@@ -35,7 +32,9 @@ public class LeaderboardManager : MonoBehaviour
     public void UploadNewEntry()
     {
         if (m_playerNameInputField.text == string.Empty)
-        { return; }
+        {
+            return;
+        }
 
         string username = m_playerNameInputField.text;
         int score = ScoreManager.I.m_Score;
@@ -45,15 +44,19 @@ public class LeaderboardManager : MonoBehaviour
         m_leaderboardSubmissionText.SetActive(true);
 
         SetEntry(username, score);
-
     }
 
     private void SetEntry(string _username, int _score)
     {
-        LeaderboardCreator.UploadNewEntry(m_publicKey, _username, _score, ((msg) =>
-        {
-            GetLeaderBoard();
-        }));
+        LeaderboardCreator.UploadNewEntry(
+            m_publicKey,
+            _username,
+            _score,
+            ((msg) =>
+            {
+                GetLeaderBoard();
+            })
+        );
     }
 
     private void OnLeaderboardLoaded(Entry[] entries)
@@ -68,8 +71,7 @@ public class LeaderboardManager : MonoBehaviour
         {
             foreach (var t in entries)
             {
-                LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF)
-                                               .GetComponent<LeaderboardEntry>();
+                LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF).GetComponent<LeaderboardEntry>();
 
                 newEntry.InitializeEntry(t.Rank, t.Username, t.Score);
                 m_currentEntries.Add(newEntry);
@@ -80,8 +82,7 @@ public class LeaderboardManager : MonoBehaviour
             for (int i = 0; i < m_maxEntryCount; i++)
             {
                 Entry t = entries[i];
-                LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF)
-                                               .GetComponent<LeaderboardEntry>();
+                LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF).GetComponent<LeaderboardEntry>();
 
                 newEntry.InitializeEntry(t.Rank, t.Username, t.Score);
                 m_currentEntries.Add(newEntry);
@@ -98,8 +99,7 @@ public class LeaderboardManager : MonoBehaviour
 
     private void OnPersonalEntryLoaded(Entry _entry)
     {
-        LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF)
-                                               .GetComponent<LeaderboardEntry>();
+        LeaderboardEntry newEntry = Instantiate(m_leaderboardEntryPrefab, m_leaderboardContentTF).GetComponent<LeaderboardEntry>();
 
         newEntry.InitializeEntry(_entry.Rank, _entry.Username, _entry.Score);
     }
