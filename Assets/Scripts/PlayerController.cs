@@ -6,7 +6,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private GameObject m_gunEffectObject;
     [SerializeField] private GameObject m_mouseClickEffectPrefab;
     [SerializeField] private Animator m_playerAnimator;
-
+    [SerializeField] private UICursor m_cursor;
     [SerializeField] private float m_damage;
     [SerializeField] private float m_hitSlowDuration;
     [SerializeField] private float m_headshotMultiplier;
@@ -102,6 +102,7 @@ public class PlayerController : Singleton<PlayerController>
         m_gunEffectObject.SetActive(true);
         m_playerAnimator.SetTrigger("Shoot");
         AudioManager.I.PlaySound("SFX_ShotgunFire");
+        m_cursor.Click();
 
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosition, Vector2.zero);
         if (hit.collider != null)

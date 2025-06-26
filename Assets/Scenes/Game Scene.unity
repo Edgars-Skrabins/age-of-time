@@ -6861,6 +6861,7 @@ MonoBehaviour:
   m_gunEffectObject: {fileID: 155483924}
   m_mouseClickEffectPrefab: {fileID: 3395776231377578316, guid: d68f817f87f2642fdb506852a4b9ef83, type: 3}
   m_playerAnimator: {fileID: 592488082}
+  m_cursor: {fileID: 216713661}
   m_damage: 5
   m_hitSlowDuration: 0.8
   m_headshotMultiplier: 2
@@ -9527,7 +9528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0978ccbae2d4591ab9c83df0d28105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_dontDestroyOnLoad: 1
+  m_dontDestroyOnLoad: 0
 --- !u!4 &701851495
 Transform:
   m_ObjectHideFlags: 0

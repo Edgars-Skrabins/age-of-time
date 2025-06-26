@@ -91,25 +91,15 @@ public class UICursor : MonoBehaviour
         m_cursorAnimator.SetBool("Hover", isHovering);
     }
 
-
-    private GameObject GetHoveredUIObject()
-    {
-        PointerEventData data = new PointerEventData(EventSystem.current)
-        {
-            position = Input.mousePosition
-        };
-
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(data, results);
-
-        return results.Count > 0 ? results[0].gameObject : null;
-    }
-
     private void DetectClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
             m_cursorAnimator.SetTrigger("Click");
         }
+    }
+    public void Click()
+    {
+        m_cursorAnimator.SetTrigger("Click");
     }
 }
