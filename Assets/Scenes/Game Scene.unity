@@ -986,7 +986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Age Of Time
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a32a0480dd0cb463982905e759a6bce8, type: 2}
   m_sharedMaterial: {fileID: 6282402238698067785, guid: a32a0480dd0cb463982905e759a6bce8, type: 2}
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   - Naah... give up
   - I am Legend
   - Hot diggity dog!
-  - Caxt is out there...
+  - CaxtNova is out there...
 --- !u!1 &155483924
 GameObject:
   m_ObjectHideFlags: 0
@@ -15144,7 +15144,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Augie Devs
+  m_text: AugieDevs
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
   m_sharedMaterial: {fileID: -302565762184478521, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
@@ -17968,7 +17968,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: IncrediBro
+  m_text: Edgars Skrabins
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
   m_sharedMaterial: {fileID: -302565762184478521, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
@@ -19611,7 +19611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Kiro Shift
+  m_text: Chirag Agarwal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
   m_sharedMaterial: {fileID: -302565762184478521, guid: 9da2776317f3248ffb4092349fb04e67, type: 2}
