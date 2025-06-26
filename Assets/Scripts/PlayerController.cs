@@ -96,6 +96,8 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Shoot()
     {
+        Cursor.visible = false;
+
         Vector3 mouseWorldPosition = GetMouseWorldPosition();
 
         SpawnEffect(mouseWorldPosition);
