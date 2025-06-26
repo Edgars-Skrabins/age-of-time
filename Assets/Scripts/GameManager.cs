@@ -17,7 +17,7 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         ChangeState(GameState.MainMenu);
-        AudioManager.I.PlaySound("BGM_MainMenu");
+        AudioManager.I.PlayMusic("BGM_MainMenu");
         VoiceoverManager.I.Play("Menu_Intro");
     }
 
@@ -56,7 +56,7 @@ public class GameManager : Singleton<GameManager>
         AudioManager.I.PlaySound("SFX_ShotgunCock");
         LevelManager.I.StartLevel();
         VoiceoverManager.I.Play("Game_Intro");
-        AudioManager.I.PlaySound(!AudioManager.I.JazzMode() ? "BGM_GameMusic" + Random.Range(0, 2) : "BGM_JazzGameMusic");
+        AudioManager.I.PlayMusic(!AudioManager.I.JazzMode() ? "BGM_GameMusic" + Random.Range(0, 2) : "BGM_JazzGameMusic");
     }
 
     public void PauseGame()
