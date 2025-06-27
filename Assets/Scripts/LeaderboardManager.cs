@@ -6,7 +6,7 @@ using Dan.Main;
 using Dan.Models;
 using UnityEngine.SceneManagement;
 
-public class LeaderboardManager : MonoBehaviour
+public class LeaderboardManager : Singleton<LeaderboardManager>
 {
     private string m_publicKey = LeaderboardKey.PUBLIC_KEY;
     [SerializeField] private Transform m_leaderboardContentTF;
@@ -22,6 +22,8 @@ public class LeaderboardManager : MonoBehaviour
         ResetLeaderboardUI();
         GetLeaderBoard();
         ResetLeaderboardUI();
+        if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused || GameManager.I.M_CurrentState == GameState.MainMenu)
+            m_leaderboardSubmissionPanel.SetActive(false);
     }
 
     public void GetLeaderBoard()
@@ -109,7 +111,7 @@ public class LeaderboardManager : MonoBehaviour
         Debug.LogError(error);
     }
 
-    private void ResetLeaderboardUI()
+    public void ResetLeaderboardUI()
     {
         m_leaderboardSubmissionPanel.SetActive(true);
         m_leaderboardPanel.SetActive(false);

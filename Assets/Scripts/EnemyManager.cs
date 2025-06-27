@@ -29,6 +29,8 @@ public class EnemyManager : Singleton<EnemyManager>
     private Coroutine m_bossSpawnRoutine;
     private bool m_hasClusterSpawned;
 
+    [SerializeField] private GameObject m_endBoss;
+
     private void Update()
     {
         GameState currentState = GameManager.I.M_CurrentState;
@@ -45,6 +47,12 @@ public class EnemyManager : Singleton<EnemyManager>
             StopCoroutine(m_bossSpawnRoutine);
             m_bossSpawnRoutine = null;
             m_spawnRoutine = null;
+        }
+
+        if (currentState == GameState.Playing && LevelManager.I.GetGameTime() > 1800f)
+        {
+            m_endBoss.SetActive(true);
+            StopSpawningEnemies();
         }
     }
 
@@ -87,6 +95,14 @@ public class EnemyManager : Singleton<EnemyManager>
                 enemy.TakeDamage(999, false);
             }
         }
+    }
+
+    public void StopSpawningEnemies()
+    {
+        StopCoroutine(m_spawnRoutine);
+        StopCoroutine(m_bossSpawnRoutine);
+        m_bossSpawnRoutine = null;
+        m_spawnRoutine = null;
     }
 
     private IEnumerator SpawnEnemiesLoop()

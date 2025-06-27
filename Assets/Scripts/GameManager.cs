@@ -7,7 +7,8 @@ public enum GameState
     MainMenu,
     Playing,
     Paused,
-    GameOver
+    GameOver,
+    Victory
 }
 
 public class GameManager : Singleton<GameManager>
@@ -18,6 +19,11 @@ public class GameManager : Singleton<GameManager>
     {
         ChangeState(GameState.MainMenu);
         AudioManager.I.PlayMusic("BGM_MainMenu");
+        Invoke(nameof(PlayIntroDialogue), 1f);
+    }
+
+    private void PlayIntroDialogue()
+    {
         VoiceoverManager.I.Play("Menu_Intro");
     }
 
@@ -42,6 +48,9 @@ public class GameManager : Singleton<GameManager>
             case GameState.GameOver:
                 Time.timeScale = 0f;
                 break;
+            case GameState.Victory:
+                Time.timeScale = 0f;
+                break;
         }
 
         UIManager.Instance.ToggleUI(M_CurrentState);
@@ -57,6 +66,12 @@ public class GameManager : Singleton<GameManager>
         LevelManager.I.StartLevel();
         VoiceoverManager.I.Play("Game_Intro");
         AudioManager.I.PlayMusic(!AudioManager.I.JazzMode() ? "BGM_GameMusic" + Random.Range(0, 2) : "BGM_JazzGameMusic");
+    }
+
+    public void WinGame()
+    {
+        ChangeState(GameState.Victory);
+        EnemyManager.I.KillAllEnemies();
     }
 
     public void PauseGame()

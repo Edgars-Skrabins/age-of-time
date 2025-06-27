@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private GameObject m_popupPrefab;
     [SerializeField] private Animator m_animator;
+    [SerializeField] private bool m_isGameKiller;
 
     public Action OnDeath;
     private Transform m_target;
@@ -85,6 +86,16 @@ public class Enemy : MonoBehaviour
         m_isSlowed = false;
     }
 
+    public float GetMaxHealth()
+    {
+        return m_maxHealth;
+    }
+
+    public float GetCurrentHealth()
+    {
+        return m_currentHealth;
+    }
+
     public void TakeDamage(float _amount, bool _giveTime = true)
     {
         m_currentHealth -= _amount;
@@ -116,9 +127,15 @@ public class Enemy : MonoBehaviour
             ScoreManager.I.AddKill();
             GiveTime();
         }
+
         Destroy(gameObject, 3f);
         OnDeath?.Invoke();
         m_isDead = true;
+        if (m_isGameKiller)
+        {
+            ScoreManager.I.AddBonusPoints();
+            GameManager.I.WinGame();
+        }
     }
 
     private void StartAttack()

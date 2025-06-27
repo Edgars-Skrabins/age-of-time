@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject m_gameUI;
     [SerializeField] private GameObject m_pauseUI;
     [SerializeField] private GameObject m_gameoverUI;
-    //[SerializeField] private GameObject m_settingsUI;
+    [SerializeField] private GameObject m_victoryUI;
     [Space]
     [SerializeField] private Slider m_currentTimeSlider;
     [SerializeField] private Image m_sliderFill;
@@ -53,7 +53,12 @@ public class UIManager : MonoBehaviour
                 m_pauseUI.SetActive(true);
                 break;
             case GameState.GameOver:
+                LeaderboardManager.I.ResetLeaderboardUI();
                 m_gameoverUI.SetActive(true);
+                break;
+            case GameState.Victory:
+                LeaderboardManager.I.ResetLeaderboardUI();
+                m_victoryUI.SetActive(true);
                 break;
         }
     }
@@ -64,6 +69,7 @@ public class UIManager : MonoBehaviour
         m_gameoverUI.SetActive(false);
         m_menuUI.SetActive(false);
         m_pauseUI.SetActive(false);
+        m_victoryUI.SetActive(false);
     }
 
     public void InitializeGameUI(float _maxTimeValue)
