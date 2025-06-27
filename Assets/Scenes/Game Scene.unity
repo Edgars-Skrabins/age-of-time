@@ -904,8 +904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &144269558
 GameObject:
   m_ObjectHideFlags: 0
@@ -7145,8 +7145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_dontDestroyOnLoad: 0
-  voiceoverSource: {fileID: 304739508}
-  voiceGroups:
+  m_voiceoverSource: {fileID: 304739508}
+  m_voiceGroups:
   - key: Menu_Intro
     clips:
     - {fileID: 8300000, guid: c7c3eea56ddb145bdbd12225cb767ec5, type: 3}
@@ -7160,12 +7160,20 @@ MonoBehaviour:
   - key: Game_Intro
     clips:
     - {fileID: 8300000, guid: f559d6dec556b4a5fb919979cb640c0a, type: 3}
+    - {fileID: 8300000, guid: 58783ff3ad26946049340b73567b7910, type: 3}
     - {fileID: 8300000, guid: df9f26713b81b4300bb843ab7c275b37, type: 3}
     - {fileID: 8300000, guid: ddf72cbb295f441edaaf0180dbe9626b, type: 3}
+    - {fileID: 8300000, guid: 53f3ca233b901447c81c22c48566454a, type: 3}
     - {fileID: 8300000, guid: aec19cfb8d618477b91d2197b04522ad, type: 3}
     - {fileID: 8300000, guid: e12c77ace9d094faa8f563bffcb7ca28, type: 3}
-    - {fileID: 8300000, guid: 53f3ca233b901447c81c22c48566454a, type: 3}
-    - {fileID: 8300000, guid: 58783ff3ad26946049340b73567b7910, type: 3}
+    cooldown: 0
+    lastPlayTime: 0
+  - key: Player_Death
+    clips:
+    - {fileID: 8300000, guid: c8caefff2ffe247e0b16d72f46deed5e, type: 3}
+    - {fileID: 8300000, guid: b7b8262d3529c4f8d970f12971aec5da, type: 3}
+    - {fileID: 8300000, guid: bd25e78958e1246268e12404c1896cdf, type: 3}
+    - {fileID: 8300000, guid: 68864a17c72bf444490efcf097602389, type: 3}
     cooldown: 0
     lastPlayTime: 0
   - key: Player_Hurt
@@ -7179,24 +7187,21 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 593dc6461403e432bbfe9a5a4fe77bac, type: 3}
     - {fileID: 8300000, guid: 7fd9169f034324e14984618b86f7068a, type: 3}
     - {fileID: 8300000, guid: 7491de543b64c4244a8d378a73f3f21a, type: 3}
-    cooldown: 2
+    cooldown: 0
     lastPlayTime: 0
   - key: Player_Upgrade
     clips:
+    - {fileID: 8300000, guid: dacb6ce69655b45bc85a61bd87e85fbd, type: 3}
+    - {fileID: 8300000, guid: c119e858bbc7944418326c89ca3d30d3, type: 3}
     - {fileID: 8300000, guid: f5931da407e3e41fb8c92f175193ab1e, type: 3}
     - {fileID: 8300000, guid: 752808cafdbce4d998f6905dacf3bc15, type: 3}
     - {fileID: 8300000, guid: 45a9b9d933aee4fb8bb218e0f1285647, type: 3}
     - {fileID: 8300000, guid: f5c9e82eb2e064a6fb3eafbf334c3fa5, type: 3}
     - {fileID: 8300000, guid: 79f96249bfbe54302943e58829867110, type: 3}
-    - {fileID: 8300000, guid: dacb6ce69655b45bc85a61bd87e85fbd, type: 3}
-    cooldown: 2
+    cooldown: 0
     lastPlayTime: 0
-  - key: Player_Death
-    clips:
-    - {fileID: 8300000, guid: c8caefff2ffe247e0b16d72f46deed5e, type: 3}
-    - {fileID: 8300000, guid: b7b8262d3529c4f8d970f12971aec5da, type: 3}
-    - {fileID: 8300000, guid: bd25e78958e1246268e12404c1896cdf, type: 3}
-    - {fileID: 8300000, guid: 68864a17c72bf444490efcf097602389, type: 3}
+  - key: Player_Hurt
+    clips: []
     cooldown: 0
     lastPlayTime: 0
   - key: Zombie_Hurt
@@ -7218,7 +7223,18 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c031213051390440c92f73a334262c7a, type: 3}
     - {fileID: 8300000, guid: c1aa09aa3302945a3ad14d65a4870960, type: 3}
     - {fileID: 8300000, guid: 6bb0bad9c2d344c3d9772451b80558fb, type: 3}
-    cooldown: 1.5
+    cooldown: 2
+    lastPlayTime: 0
+  - key: Zombie_Attack
+    clips:
+    - {fileID: 8300000, guid: 929c0dbc066464a2b93a8f1375a7bd47, type: 3}
+    - {fileID: 8300000, guid: 13b7dcca8632247128c5e8e76688ae7a, type: 3}
+    - {fileID: 8300000, guid: 7dd0f27a855a040a0a26d051d7ce8b85, type: 3}
+    - {fileID: 8300000, guid: 571f40e9cb3404a0ca03f1bc090a1b8e, type: 3}
+    - {fileID: 8300000, guid: 43f92115af9f14ab1bb068411b9228bf, type: 3}
+    - {fileID: 8300000, guid: 9a762d7114cf34b7881fd918f27738b1, type: 3}
+    - {fileID: 8300000, guid: b61927468c5f8430eb477d8f44dd27bd, type: 3}
+    cooldown: 1
     lastPlayTime: 0
   - key: Zombie_Dead
     clips:
@@ -7238,18 +7254,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: c91a5cdf7d67040d9a32132f2417d4fe, type: 3}
     - {fileID: 8300000, guid: bb48ec05d986a44f29c5005ed54a633e, type: 3}
     - {fileID: 8300000, guid: 6e5ac90aa4ba2442681bee50be223954, type: 3}
-    cooldown: 1.5
-    lastPlayTime: 0
-  - key: Zombie_Attack
-    clips:
-    - {fileID: 8300000, guid: 929c0dbc066464a2b93a8f1375a7bd47, type: 3}
-    - {fileID: 8300000, guid: 13b7dcca8632247128c5e8e76688ae7a, type: 3}
-    - {fileID: 8300000, guid: 7dd0f27a855a040a0a26d051d7ce8b85, type: 3}
-    - {fileID: 8300000, guid: 571f40e9cb3404a0ca03f1bc090a1b8e, type: 3}
-    - {fileID: 8300000, guid: 43f92115af9f14ab1bb068411b9228bf, type: 3}
-    - {fileID: 8300000, guid: 9a762d7114cf34b7881fd918f27738b1, type: 3}
-    - {fileID: 8300000, guid: b61927468c5f8430eb477d8f44dd27bd, type: 3}
-    cooldown: 1.5
+    cooldown: 2
     lastPlayTime: 0
 --- !u!4 &304739510
 Transform:
@@ -7598,8 +7603,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &357691011
 GameObject:
   m_ObjectHideFlags: 0
@@ -8360,8 +8365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &485781371
 GameObject:
   m_ObjectHideFlags: 0
@@ -8880,8 +8885,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -10197,8 +10202,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &701851493
 GameObject:
   m_ObjectHideFlags: 0
@@ -13578,8 +13583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1186652871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14965,8 +14970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1364509359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15307,8 +15312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1375806667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17627,8 +17632,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1597410241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18137,8 +18142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &1623079400
 GameObject:
   m_ObjectHideFlags: 0
@@ -18386,8 +18391,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1662937646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19137,8 +19142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &1753879879
 GameObject:
   m_ObjectHideFlags: 0
@@ -19191,8 +19196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1753879882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20041,8 +20046,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &1809921186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20510,8 +20515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &1857632412
 GameObject:
   m_ObjectHideFlags: 0
@@ -21745,8 +21750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!114 &2047134757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22051,8 +22056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!1 &2067004953
 GameObject:
   m_ObjectHideFlags: 0
@@ -23176,8 +23181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9311190034ce04a5480a37537b546bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeMagnitude: 10
-  shakeSpeed: 50
+  m_shakeMagnitude: 10
+  m_shakeSpeed: 50
 --- !u!4 &84098466295073342
 Transform:
   m_ObjectHideFlags: 0
