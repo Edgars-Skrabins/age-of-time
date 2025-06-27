@@ -7,15 +7,15 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
     [System.Serializable]
     public class VoiceoverGroup
     {
-        public string key; // e.g., "EnemyHit", "BuyUpgrade"
+        public string key;
         public AudioClip[] clips;
         public float cooldown = 1f;
         [HideInInspector] public float lastPlayTime = -999f;
     }
 
     [Header("Setup")]
-    [SerializeField] private AudioSource voiceoverSource;
-    [SerializeField] private List<VoiceoverGroup> voiceGroups = new();
+    [SerializeField] private AudioSource m_voiceoverSource;
+    [SerializeField] private List<VoiceoverGroup> m_voiceGroups = new();
 
     private Dictionary<string, VoiceoverGroup> voiceDict = new();
 
@@ -23,7 +23,7 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
     {
         base.Awake();
 
-        foreach (VoiceoverGroup group in voiceGroups)
+        foreach (VoiceoverGroup group in m_voiceGroups)
         {
             if (!voiceDict.ContainsKey(group.key))
                 voiceDict.Add(group.key, group);
@@ -39,9 +39,9 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
 
         if (group.clips.Length == 0) return;
 
-        voiceoverSource.pitch = 1;
+        m_voiceoverSource.pitch = 1;
         AudioClip clip = group.clips[Random.Range(0, group.clips.Length)];
-        voiceoverSource.PlayOneShot(clip);
+        m_voiceoverSource.PlayOneShot(clip);
         group.lastPlayTime = Time.unscaledTime;
     }
 
@@ -49,15 +49,14 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
     {
         if (!voiceDict.TryGetValue(key, out VoiceoverGroup group)) return;
 
-        // Cooldown check
         if (Time.unscaledTime - group.lastPlayTime < group.cooldown) return;
 
         if (group.clips.Length == 0) return;
 
-        voiceoverSource.pitch = Random.Range(randomizeMinMax.x, randomizeMinMax.y);
+        m_voiceoverSource.pitch = Random.Range(randomizeMinMax.x, randomizeMinMax.y);
 
         AudioClip clip = group.clips[Random.Range(0, group.clips.Length)];
-        voiceoverSource.PlayOneShot(clip);
+        m_voiceoverSource.PlayOneShot(clip);
         group.lastPlayTime = Time.unscaledTime;
     }
 }
