@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
         {
             m_rigidbody.velocity = direction * (m_moveSpeed * 0.5f);
             return;
-
         }
         m_rigidbody.velocity = direction * m_moveSpeed;
     }
@@ -156,7 +155,7 @@ public class Enemy : MonoBehaviour
         int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
         if (m_timeGainedOnDeath > 0)
         {
-            SpawnPopup("+" + m_timeGainedOnDeath.ToString());
+            SpawnPopup("+" + m_timeGainedOnDeath);
         }
         LevelManager.I.AddTime(m_timeGainedOnDeath);
     }

@@ -1,10 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
 using Dan.Main;
 using Dan.Models;
-using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine;
 
 public class LeaderboardManager : Singleton<LeaderboardManager>
 {
@@ -22,8 +20,8 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
         ResetLeaderboardUI();
         GetLeaderBoard();
         ResetLeaderboardUI();
-        if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused || GameManager.I.M_CurrentState == GameState.MainMenu)
-            m_leaderboardSubmissionPanel.SetActive(false);
+        if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused ||
+            GameManager.I.M_CurrentState == GameState.MainMenu) m_leaderboardSubmissionPanel.SetActive(false);
     }
 
     public void GetLeaderBoard()
@@ -50,15 +48,7 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
 
     private void SetEntry(string _username, int _score)
     {
-        LeaderboardCreator.UploadNewEntry(
-            m_publicKey,
-            _username,
-            _score,
-            ((msg) =>
-            {
-                GetLeaderBoard();
-            })
-        );
+        LeaderboardCreator.UploadNewEntry(m_publicKey, _username, _score, msg => { GetLeaderBoard(); });
     }
 
     private void OnLeaderboardLoaded(Entry[] entries)

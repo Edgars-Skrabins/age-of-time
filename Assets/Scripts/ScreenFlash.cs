@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,7 @@ public class ScreenFlash : Singleton<ScreenFlash>
     [SerializeField] private Color m_flashColor;
     [SerializeField] private float m_flashDuration;
 
-    void Start()
+    private void Start()
     {
         if (m_flashImage != null)
         {

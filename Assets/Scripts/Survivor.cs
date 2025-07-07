@@ -5,6 +5,7 @@ public class Survivor : MonoBehaviour
     [SerializeField] private float m_damage;
     [SerializeField] private float m_fireFrequency;
     [SerializeField] private Animator m_animator;
+    [SerializeField] private float m_fireRateIncrease;
 
     private void OnEnable()
     {
@@ -29,7 +30,7 @@ public class Survivor : MonoBehaviour
 
     public void IncreaseFireRate()
     {
-        m_fireFrequency -= 1;
+        m_fireFrequency -= m_fireRateIncrease;
     }
 
     private float m_fireTimer;

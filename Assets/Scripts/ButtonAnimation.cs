@@ -19,8 +19,7 @@ public class ButtonAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (m_shakeRoutine == null)
-            m_shakeRoutine = StartCoroutine(ShakeLoop());
+        if (m_shakeRoutine == null) m_shakeRoutine = StartCoroutine(ShakeLoop());
     }
 
     public void OnPointerExit(PointerEventData eventData)

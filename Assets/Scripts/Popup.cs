@@ -26,7 +26,6 @@ public class Popup : MonoBehaviour
     }
 
 
-
     private IEnumerator StartMovingUp()
     {
         float elapsed = 0f;

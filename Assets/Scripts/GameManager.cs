@@ -13,7 +13,7 @@ public enum GameState
 
 public class GameManager : Singleton<GameManager>
 {
-    public GameState M_CurrentState { get; private set; }
+    public GameState M_CurrentState {get; private set;}
 
     private void Start()
     {

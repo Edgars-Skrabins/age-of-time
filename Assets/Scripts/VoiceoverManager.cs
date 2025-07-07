@@ -1,10 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class VoiceoverManager : Singleton<VoiceoverManager>
 {
-    [System.Serializable]
+    [Serializable]
     public class VoiceoverGroup
     {
         public string key;
@@ -25,8 +26,7 @@ public class VoiceoverManager : Singleton<VoiceoverManager>
 
         foreach (VoiceoverGroup group in m_voiceGroups)
         {
-            if (!voiceDict.ContainsKey(group.key))
-                voiceDict.Add(group.key, group);
+            if (!voiceDict.ContainsKey(group.key)) voiceDict.Add(group.key, group);
         }
     }
 

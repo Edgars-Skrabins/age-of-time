@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    public static T I { get; private set;}
-    
+    public static T I {get; private set;}
+
     [SerializeField] private bool m_dontDestroyOnLoad;
 
     protected virtual void Awake()
@@ -11,8 +11,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (I == null)
         {
             I = this as T;
-            if (m_dontDestroyOnLoad)
-                DontDestroyOnLoad(gameObject);
+            if (m_dontDestroyOnLoad) DontDestroyOnLoad(gameObject);
         }
         else if (I != null && I != this)
         {
@@ -21,4 +20,3 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 }
-

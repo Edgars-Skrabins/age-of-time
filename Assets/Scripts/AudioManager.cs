@@ -1,10 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-[System.Serializable]
+[Serializable]
 public class AudioData
 {
     public string name;
@@ -55,6 +56,7 @@ public class AudioManager : Singleton<AudioManager>
         m_mixer.SetFloat(m_sfxVolumeParameter, Mathf.Log10(GetSFXVolume()) * 20);
         m_mixer.SetFloat(m_voiceVolumeParameter, Mathf.Log10(GetVoiceVolume()) * 20);
     }
+
     private void InitializeAudioSources()
     {
         if (m_audioDataList.Count > 0)
@@ -80,6 +82,7 @@ public class AudioManager : Singleton<AudioManager>
             }
         }
     }
+
     private void InitializeUI()
     {
         m_musicVolumeSlider.minValue = .00001f;
@@ -99,8 +102,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         foreach (GameObject obj in m_audioSourceObjects)
         {
-            if (obj.name == _name)
-                return obj.GetComponent<AudioSource>();
+            if (obj.name == _name) return obj.GetComponent<AudioSource>();
         }
         return null;
     }
@@ -109,8 +111,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         foreach (AudioData sfx in m_audioDataList)
         {
-            if (sfx.name == _name)
-                return sfx;
+            if (sfx.name == _name) return sfx;
         }
         return null;
     }
@@ -220,12 +221,18 @@ public class AudioManager : Singleton<AudioManager>
         if (GameManager.I.M_CurrentState == GameState.MainMenu)
         {
             if (!JazzMode()) PlayMusic("BGM_MainMenu");
-            else { PlayMusic("BGM_JazzMainMenu"); }
+            else
+            {
+                PlayMusic("BGM_JazzMainMenu");
+            }
         }
         else if (GameManager.I.M_CurrentState == GameState.Playing || GameManager.I.M_CurrentState == GameState.Paused)
         {
             if (!JazzMode()) PlayMusic("BGM_GameMusic" + Random.Range(0, 2));
-            else { PlayMusic("BGM_JazzGameMusic"); }
+            else
+            {
+                PlayMusic("BGM_JazzGameMusic");
+            }
         }
         else if (GameManager.I.M_CurrentState == GameState.GameOver)
         {

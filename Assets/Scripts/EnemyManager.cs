@@ -92,12 +92,13 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             if (enemy)
             {
-                enemy.TakeDamage(999, false);
+                const int oneShotDamage = 999;
+                enemy.TakeDamage(oneShotDamage, false);
             }
         }
     }
 
-    public void StopSpawningEnemies()
+    private void StopSpawningEnemies()
     {
         StopCoroutine(m_spawnRoutine);
         StopCoroutine(m_bossSpawnRoutine);
@@ -140,7 +141,6 @@ public class EnemyManager : Singleton<EnemyManager>
             float gameTime = LevelManager.I.GetGameTime();
             Invoke(nameof(SpawnCluster), Random.Range(m_minClusterSpawnRate.Evaluate(gameTime), m_maxClusterSpawnRate.Evaluate(gameTime)));
             m_hasClusterSpawned = true;
-            ;
         }
     }
 

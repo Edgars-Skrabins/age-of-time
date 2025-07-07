@@ -1,11 +1,9 @@
-using UnityEngine;
-using System.Collections;
-using System.ComponentModel;
 using TMPro;
+using UnityEngine;
 
 public class ScoreManager : Singleton<ScoreManager>
 {
-    public int m_Score { get; private set; }
+    public int m_Score {get; private set;}
 
     [SerializeField] private int m_killPoint;
     [SerializeField] private int m_headshotPoint;
@@ -35,7 +33,8 @@ public class ScoreManager : Singleton<ScoreManager>
             m_ScorePanel.SetActive(false);
         }
 
-        if (GameManager.I.M_CurrentState == GameState.Paused || GameManager.I.M_CurrentState == GameState.GameOver || GameManager.I.M_CurrentState == GameState.Victory)
+        if (GameManager.I.M_CurrentState == GameState.Paused || GameManager.I.M_CurrentState == GameState.GameOver ||
+            GameManager.I.M_CurrentState == GameState.Victory)
         {
             m_ScorePanel.SetActive(true);
         }
@@ -49,7 +48,10 @@ public class ScoreManager : Singleton<ScoreManager>
         m_killScoreText.text = m_totalKills.ToString();
         m_headshotScoreText.text = m_headshots.ToString();
 
-        if (m_won) { m_timePlayed += m_bonusPoints; }
+        if (m_won)
+        {
+            m_timePlayed += m_bonusPoints;
+        }
 
         return m_Score = (int)m_timePlayed + m_headshots * m_headshotPoint + m_totalKills * m_killPoint;
     }
@@ -63,6 +65,7 @@ public class ScoreManager : Singleton<ScoreManager>
     {
         m_headshots++;
     }
+
     public void AddBonusPoints()
     {
         m_won = true;

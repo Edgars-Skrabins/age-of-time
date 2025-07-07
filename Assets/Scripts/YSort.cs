@@ -4,7 +4,7 @@ using UnityEngine;
 public class YSort : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    [SerializeField] private int sortingOffset = 0;
+    [SerializeField] private int sortingOffset;
     [SerializeField] private float precisionMultiplier = 100f; // Higher = better precision
 
     private void Awake()

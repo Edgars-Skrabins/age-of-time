@@ -1,7 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UICursor : MonoBehaviour
 {
@@ -40,7 +40,8 @@ public class UICursor : MonoBehaviour
                 m_canvas.transform as RectTransform,
                 mousePos,
                 m_canvas.worldCamera,
-                out Vector2 localPos);
+                out Vector2 localPos
+            );
 
             m_cursorRect.localPosition = localPos;
         }
@@ -62,13 +63,8 @@ public class UICursor : MonoBehaviour
         {
             GameObject go = result.gameObject;
 
-            if (
-                go.GetComponent<Button>() ||
-                go.GetComponent<Toggle>() ||
-                go.GetComponent<Slider>() ||
-                go.GetComponent<Enemy>() ||
-                go.GetComponentInParent<Enemy>()
-            )
+            if (go.GetComponent<Button>() || go.GetComponent<Toggle>() || go.GetComponent<Slider>() || go.GetComponent<Enemy>() ||
+                go.GetComponentInParent<Enemy>())
             {
                 isHovering = true;
                 break;
@@ -98,6 +94,7 @@ public class UICursor : MonoBehaviour
             m_cursorAnimator.SetTrigger("Click");
         }
     }
+
     public void Click()
     {
         m_cursorAnimator.SetTrigger("Click");
