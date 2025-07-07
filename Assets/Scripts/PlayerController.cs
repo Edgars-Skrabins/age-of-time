@@ -12,6 +12,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float m_headshotMultiplier;
     [SerializeField] private float m_fireRate;
     [SerializeField] private float m_screenShakeAmount;
+    [SerializeField] private Camera m_playerCamera;
     private float m_fireRateTimer;
 
     protected override void Awake()
@@ -82,7 +83,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private Vector3 GetMouseWorldPosition()
     {
-        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 mouseWorldPosition = m_playerCamera.ScreenToWorldPoint(Input.mousePosition);
         mouseWorldPosition.z = 0f;
         return mouseWorldPosition;
     }
