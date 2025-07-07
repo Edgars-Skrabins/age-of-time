@@ -23,6 +23,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image m_sliderFillAccent;
     [SerializeField] private TMP_Text m_currentTimeText;
 
+    [Header("Overflow limits and reduction rates")]
+    [SerializeField] private float m_crazyTimeOverflowStartingPoint;
+    [SerializeField] private float m_crazyTimeOverflowDrainRate;
+
 
     private void Awake()
     {
@@ -84,13 +88,13 @@ public class UIManager : MonoBehaviour
     public void UpdateTime(float _value)
     {
         m_currentTimeText.text = Mathf.FloorToInt(_value).ToString();
-        if (_value > 200)
+        if (_value > m_crazyTimeOverflowStartingPoint)
         {
             SetCrazyOverFlowSettings();
             return;
         }
 
-        if (_value > m_maxTime && _value < 200)
+        if (_value > m_maxTime && _value < m_crazyTimeOverflowStartingPoint)
         {
             SetTimeOverflowSettings();
             return;
@@ -101,7 +105,7 @@ public class UIManager : MonoBehaviour
 
     private void SetCrazyOverFlowSettings()
     {
-        LevelManager.I.SetTimeReductionMultiplier(15);
+        LevelManager.I.SetTimeReductionMultiplier(m_crazyTimeOverflowDrainRate);
     }
 
     private void SetTimeOverflowSettings()
