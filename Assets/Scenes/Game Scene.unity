@@ -20357,29 +20357,29 @@ MonoBehaviour:
   - {fileID: 1857693120108770833, guid: 28a091b957d1d451a891fc4c073699aa, type: 3}
   - {fileID: 1857693120108770833, guid: f157da1b5bd754ba090ed40671ce01f5, type: 3}
   - {fileID: 1857693120108770833, guid: 1e9d52fa6db1d461a88de4829968383a, type: 3}
-  m_bossEnemyPrefabs:
+  m_strongerEnemyPrefabs:
   - {fileID: 1857693120108770833, guid: 759188d773a9d4997bea9d011c251681, type: 3}
   - {fileID: 1857693120108770833, guid: d7b42d5aadb02448fb9d1351299a50c1, type: 3}
   - {fileID: 1857693120108770833, guid: 99e417ab309f64da5b9c2aa16aef4d77, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
-  m_bossSpawnRateCurve:
+  m_strongerSpawnRateCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 30
-      inSlope: -0.05625
-      outSlope: -0.05625
+      value: 40
+      inSlope: -0.058333334
+      outSlope: -0.058333334
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 480
-      value: 3
-      inSlope: -0.05625
-      outSlope: -0.05625
+      value: 12
+      inSlope: -0.058333334
+      outSlope: -0.058333334
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334

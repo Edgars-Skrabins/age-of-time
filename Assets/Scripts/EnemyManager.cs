@@ -13,20 +13,20 @@ public class EnemyManager : Singleton<EnemyManager>
     [SerializeField] private AnimationCurve m_maxClusterSize;
 
     [SerializeField] private Enemy[] m_enemyPrefabs;
-    [SerializeField] private Enemy[] m_bossEnemyPrefabs;
+    [SerializeField] private Enemy[] m_strongerEnemyPrefabs;
     private Enemy m_enemyPrefab;
-    private Enemy m_bossEnemyPrefab;
+    private Enemy m_strongerEnemyPrefab;
 
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
 
-    [SerializeField] private AnimationCurve m_bossSpawnRateCurve;
+    [SerializeField] private AnimationCurve m_strongerSpawnRateCurve;
     [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
     [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
 
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
     private Coroutine m_spawnRoutine;
-    private Coroutine m_bossSpawnRoutine;
+    private Coroutine m_strongerSpawnRoutine;
     private bool m_hasClusterSpawned;
 
     [SerializeField] private GameObject m_endBoss;
@@ -38,14 +38,14 @@ public class EnemyManager : Singleton<EnemyManager>
         if (currentState == GameState.Playing && m_spawnRoutine == null)
         {
             m_spawnRoutine = StartCoroutine(SpawnEnemiesLoop());
-            m_bossSpawnRoutine = StartCoroutine(SpawnBossEnemiesLoop());
+            m_strongerSpawnRoutine = StartCoroutine(SpawnStrongerEnemiesLoop());
         }
 
         else if (currentState != GameState.Playing && m_spawnRoutine != null)
         {
             StopCoroutine(m_spawnRoutine);
-            StopCoroutine(m_bossSpawnRoutine);
-            m_bossSpawnRoutine = null;
+            StopCoroutine(m_strongerSpawnRoutine);
+            m_strongerSpawnRoutine = null;
             m_spawnRoutine = null;
         }
 
@@ -101,8 +101,8 @@ public class EnemyManager : Singleton<EnemyManager>
     private void StopSpawningEnemies()
     {
         StopCoroutine(m_spawnRoutine);
-        StopCoroutine(m_bossSpawnRoutine);
-        m_bossSpawnRoutine = null;
+        StopCoroutine(m_strongerSpawnRoutine);
+        m_strongerSpawnRoutine = null;
         m_spawnRoutine = null;
     }
 
@@ -118,13 +118,13 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
-    private IEnumerator SpawnBossEnemiesLoop()
+    private IEnumerator SpawnStrongerEnemiesLoop()
     {
         while (true)
         {
             float timeValue = LevelManager.I.GetGameTime();
-            yield return new WaitForSeconds(m_bossSpawnRateCurve.Evaluate(timeValue));
-            SpawnEnemyBoss();
+            yield return new WaitForSeconds(m_strongerSpawnRateCurve.Evaluate(timeValue));
+            SpawnStrongerEnemy();
         }
     }
 
@@ -144,11 +144,11 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
-    private void SpawnEnemyBoss()
+    private void SpawnStrongerEnemy()
     {
-        m_bossEnemyPrefab = m_bossEnemyPrefabs[Random.Range(0, m_bossEnemyPrefabs.Length)];
+        m_strongerEnemyPrefab = m_strongerEnemyPrefabs[Random.Range(0, m_strongerEnemyPrefabs.Length)];
 
-        Enemy newEnemy = Instantiate(m_bossEnemyPrefab);
+        Enemy newEnemy = Instantiate(m_strongerEnemyPrefab);
         m_spawnedEnemies.Add(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
         newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
