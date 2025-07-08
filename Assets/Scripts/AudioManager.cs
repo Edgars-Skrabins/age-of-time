@@ -49,6 +49,10 @@ public class AudioManager : Singleton<AudioManager>
         InitializeAudioSources();
         InitializeUI();
     }
+    private void Start()
+    {
+        ApplySettings();
+    }
 
     private void ApplySettings()
     {
