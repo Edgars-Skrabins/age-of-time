@@ -15484,7 +15484,7 @@ Transform:
   m_GameObject: {fileID: 1378591346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.16, y: -2.89, z: 0}
+  m_LocalPosition: {x: -11.1, y: -2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20361,8 +20361,13 @@ MonoBehaviour:
   - {fileID: 1857693120108770833, guid: 759188d773a9d4997bea9d011c251681, type: 3}
   - {fileID: 1857693120108770833, guid: d7b42d5aadb02448fb9d1351299a50c1, type: 3}
   - {fileID: 1857693120108770833, guid: 99e417ab309f64da5b9c2aa16aef4d77, type: 3}
+  m_miniBossPrefabs:
+  - {fileID: 1857693120108770833, guid: ff294fdd130514811bc0f62bdaedf725, type: 3}
+  - {fileID: 1857693120108770833, guid: 9eb932655ec3845bb911857c0d1be7bf, type: 3}
+  - {fileID: 1857693120108770833, guid: d5eb91bfccaad40bebd4b17fc574ec3a, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
+  m_miniBossSpawnRate: 300
   m_strongerSpawnRateCurve:
     serializedVersion: 2
     m_Curve:
@@ -20435,7 +20440,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_endBoss: {fileID: 5517134540124845738}
+  m_endGameBoss: {fileID: 5517134540124845738}
 --- !u!1 &1818677038
 GameObject:
   m_ObjectHideFlags: 0

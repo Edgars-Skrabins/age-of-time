@@ -14,22 +14,31 @@ public class EnemyManager : Singleton<EnemyManager>
 
     [SerializeField] private Enemy[] m_enemyPrefabs;
     [SerializeField] private Enemy[] m_strongerEnemyPrefabs;
+    [SerializeField] private Enemy[] m_miniBossPrefabs;
+
+    private Enemy m_miniBossPrefab;
     private Enemy m_enemyPrefab;
     private Enemy m_strongerEnemyPrefab;
 
     [SerializeField] private Transform m_spawnPoint;
     [SerializeField] private float m_maxSpawnRangeY;
 
+    [SerializeField] private float m_miniBossSpawnRate;
+    private int m_miniBossSpawnIndex;
+
     [SerializeField] private AnimationCurve m_strongerSpawnRateCurve;
     [SerializeField] private AnimationCurve m_minSpawnDelayCurve;
     [SerializeField] private AnimationCurve m_maxSpawnDelayCurve;
 
     private readonly List<Enemy> m_spawnedEnemies = new List<Enemy>();
+
     private Coroutine m_spawnRoutine;
     private Coroutine m_strongerSpawnRoutine;
+    private Coroutine m_miniBossSpawnRoutine;
+
     private bool m_hasClusterSpawned;
 
-    [SerializeField] private GameObject m_endBoss;
+    [SerializeField] private GameObject m_endGameBoss;
 
     private void Update()
     {
@@ -39,20 +48,18 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             m_spawnRoutine = StartCoroutine(SpawnEnemiesLoop());
             m_strongerSpawnRoutine = StartCoroutine(SpawnStrongerEnemiesLoop());
+            m_miniBossSpawnRoutine = StartCoroutine(SpawnMiniBossLoop());
         }
 
         else if (currentState != GameState.Playing && m_spawnRoutine != null)
         {
-            StopCoroutine(m_spawnRoutine);
-            StopCoroutine(m_strongerSpawnRoutine);
-            m_strongerSpawnRoutine = null;
-            m_spawnRoutine = null;
+            StopSpawningEnemies();
         }
 
         if (currentState == GameState.Playing && LevelManager.I.GetGameTime() > 1800f)
         {
-            m_endBoss.SetActive(true);
             StopSpawningEnemies();
+            m_endGameBoss.SetActive(true);
         }
     }
 
@@ -102,8 +109,10 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         StopCoroutine(m_spawnRoutine);
         StopCoroutine(m_strongerSpawnRoutine);
+        StopCoroutine(m_miniBossSpawnRoutine);
         m_strongerSpawnRoutine = null;
         m_spawnRoutine = null;
+        m_miniBossSpawnRoutine = null;
     }
 
     private IEnumerator SpawnEnemiesLoop()
@@ -125,6 +134,16 @@ public class EnemyManager : Singleton<EnemyManager>
             float timeValue = LevelManager.I.GetGameTime();
             yield return new WaitForSeconds(m_strongerSpawnRateCurve.Evaluate(timeValue));
             SpawnStrongerEnemy();
+        }
+    }
+
+    private IEnumerator SpawnMiniBossLoop()
+    {
+        while (true)
+        {
+            float timeValue = LevelManager.I.GetGameTime();
+            yield return new WaitForSeconds(m_miniBossSpawnRate);
+            SpawnMiniBoss();
         }
     }
 
@@ -152,6 +171,19 @@ public class EnemyManager : Singleton<EnemyManager>
         m_spawnedEnemies.Add(newEnemy);
         newEnemy.transform.position = GetRandomSpawnPoint();
         newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+    }
+
+    private void SpawnMiniBoss()
+    {
+        //int index = m_miniBossSpawnIndex < m_miniBossPrefabs.Length ? m_miniBossSpawnIndex : Random.Range(0, m_miniBossPrefabs.Length);
+        m_miniBossPrefab = m_miniBossPrefabs[m_miniBossSpawnIndex];
+
+        Enemy newEnemy = Instantiate(m_miniBossPrefab);
+        m_spawnedEnemies.Add(newEnemy);
+        newEnemy.transform.position = m_spawnPoint.position;
+        newEnemy.OnDeath += () => m_spawnedEnemies.Remove(newEnemy);
+
+        m_miniBossSpawnIndex++;
     }
 
     private void SpawnCluster()
