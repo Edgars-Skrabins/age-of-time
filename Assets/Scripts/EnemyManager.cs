@@ -175,7 +175,8 @@ public class EnemyManager : Singleton<EnemyManager>
 
     private void SpawnMiniBoss()
     {
-        //int index = m_miniBossSpawnIndex < m_miniBossPrefabs.Length ? m_miniBossSpawnIndex : Random.Range(0, m_miniBossPrefabs.Length);
+        if (m_miniBossSpawnIndex > m_miniBossPrefabs.Length) return;
+
         m_miniBossPrefab = m_miniBossPrefabs[m_miniBossSpawnIndex];
 
         Enemy newEnemy = Instantiate(m_miniBossPrefab);

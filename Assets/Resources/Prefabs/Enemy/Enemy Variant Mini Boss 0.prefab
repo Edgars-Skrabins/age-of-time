@@ -499,11 +499,11 @@ PrefabInstance:
       objectReference: {fileID: 7463195659601674562}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_maxHealth
-      value: 250
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minMaxMoveSpeed.x
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_minMaxMoveSpeed.y

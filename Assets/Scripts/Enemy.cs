@@ -98,7 +98,6 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float _amount, bool _giveTime = true)
     {
         m_currentHealth -= _amount;
-        SpawnPopup(_amount.ToString(), Color.red);
         m_rigidbody.velocity = Vector2.zero;
 
         if (m_currentHealth <= 0)
@@ -112,6 +111,7 @@ public class Enemy : MonoBehaviour
         {
             m_animator.SetTrigger("Hurt");
             VoiceoverManager.I.Play("Zombie_Hurt", new Vector2(0.75f, 1.5f));
+            SpawnPopup(_amount.ToString(), Color.red);
         }
     }
 
@@ -130,10 +130,11 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject, 3f);
         OnDeath?.Invoke();
         m_isDead = true;
-        if (m_isGameKiller)
+        if (m_isBoss)
         {
             ScoreManager.I.AddBonusPoints();
-            GameManager.I.WinGame();
+            if (m_isGameKiller)
+                GameManager.I.WinGame();
         }
     }
 
