@@ -20365,6 +20365,8 @@ MonoBehaviour:
   - {fileID: 1857693120108770833, guid: ff294fdd130514811bc0f62bdaedf725, type: 3}
   - {fileID: 1857693120108770833, guid: 9eb932655ec3845bb911857c0d1be7bf, type: 3}
   - {fileID: 1857693120108770833, guid: d5eb91bfccaad40bebd4b17fc574ec3a, type: 3}
+  - {fileID: 1857693120108770833, guid: cd0f6e3188fee4790abf6da22b2e4daf, type: 3}
+  - {fileID: 1857693120108770833, guid: a226930fe45ef4b7db0159eec1b88a62, type: 3}
   m_spawnPoint: {fileID: 1378591347}
   m_maxSpawnRangeY: 1
   m_miniBossSpawnRate: 300
