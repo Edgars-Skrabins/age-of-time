@@ -5,6 +5,7 @@ public class LevelManager : Singleton<LevelManager>
     [SerializeField] private float m_maxTime;
     [SerializeField] private float m_currentTimeValue;
     [SerializeField] private float m_totalTimePassed;
+    [SerializeField] private float m_lateGameTime;
     [SerializeField] private float m_timeReductionMultiplier;
     public Transform m_BaseTarget;
 
@@ -21,6 +22,16 @@ public class LevelManager : Singleton<LevelManager>
     public float GetGameTime()
     {
         return m_gameTime;
+    }
+
+    public bool IsLateGame()
+    {
+        if (m_gameTime > m_lateGameTime)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void CountGameTime()
@@ -48,6 +59,11 @@ public class LevelManager : Singleton<LevelManager>
     public void SetTimeReductionMultiplier(float _value)
     {
         m_timeReductionMultiplier = _value;
+    }
+
+    public bool CanPlayerAffordToBuy(int _cost)
+    {
+        return m_currentTimeValue > _cost;
     }
 
     private void UpdateGameTime()

@@ -112,6 +112,22 @@ PrefabInstance:
       propertyPath: m_animationToHitInterval
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_minMaxMoveSpeedLateGame.x
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_minMaxMoveSpeedLateGame.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_maxTimeGainedOnDeathInLateGame
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1574837212652896943, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
+      propertyPath: m_minTimeGainedOnDeathInLateGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2606653098941659932, guid: 3c6263d6825a7471dbbaedd6667d5f18, type: 3}
       propertyPath: m_Layer
       value: 7

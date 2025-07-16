@@ -105,6 +105,25 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    public void KillSpecificAmountOfEnemies(int _amount)
+    {
+        List<Enemy> spawnedEnemiesCopy = new List<Enemy>(m_spawnedEnemies);
+        if (spawnedEnemiesCopy.Count < _amount)
+        {
+            _amount = spawnedEnemiesCopy.Count;
+        }
+        const int oneShotDamage = 999;
+        for (int i = 0; i < _amount; i++)
+        {
+            if (spawnedEnemiesCopy[i] == null)
+            {
+                continue;
+            }
+            spawnedEnemiesCopy[i].TakeDamage(oneShotDamage);
+        }
+    }
+
+
     private void StopSpawningEnemies()
     {
         StopCoroutine(m_spawnRoutine);

@@ -13,6 +13,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float m_fireRate;
     [SerializeField] private float m_screenShakeAmount;
     [SerializeField] private Camera m_playerCamera;
+    [SerializeField] private float m_smallestPossibleFireRate;
     private float m_fireRateTimer;
 
     protected override void Awake()
@@ -63,7 +64,7 @@ public class PlayerController : Singleton<PlayerController>
 
     public bool CanIncreaseFireRate()
     {
-        return m_fireRate > 0.02f;
+        return m_fireRate > m_smallestPossibleFireRate;
     }
 
     public void IncreaseDamage(float _amount)

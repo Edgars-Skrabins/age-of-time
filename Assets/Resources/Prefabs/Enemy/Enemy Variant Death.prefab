@@ -146,6 +146,8 @@ MonoBehaviour:
   m_maxHealth: 100000
   m_minTimeGainedOnDeath: 10
   m_maxTimeGainedOnDeath: 100
+  m_minTimeGainedOnDeathInLateGame: 10
+  m_maxTimeGainedOnDeathInLateGame: 100
   m_currentHealth: 0
   m_damage: 5000
   m_attackInterval: 1.5
@@ -153,6 +155,7 @@ MonoBehaviour:
   m_animationToHitInterval: 0.5
   m_comboAnimationInterval: 0
   m_minMaxMoveSpeed: {x: 0.15, y: 0.15}
+  m_minMaxMoveSpeedLateGame: {x: 0.15, y: 0.15}
   m_rigidbody: {fileID: 5636491453045363964}
   m_popupPrefab: {fileID: 7057120847238521341, guid: 2709bd892d48647faa45d507e101c4b5, type: 3}
   m_animator: {fileID: 7827334192688129137}

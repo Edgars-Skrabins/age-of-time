@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_maxHealth;
     [SerializeField] private float m_minTimeGainedOnDeath;
     [SerializeField] private float m_maxTimeGainedOnDeath;
+    [SerializeField] private float m_minTimeGainedOnDeathInLateGame;
+    [SerializeField] private float m_maxTimeGainedOnDeathInLateGame;
     [SerializeField] private float m_currentHealth;
     [SerializeField] private float m_damage;
     [SerializeField] private float m_attackInterval = 1.5f;
@@ -15,6 +17,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_animationToHitInterval;
     [SerializeField] private float m_comboAnimationInterval;
     [SerializeField] private Vector2 m_minMaxMoveSpeed;
+    [SerializeField] private Vector2 m_minMaxMoveSpeedLateGame;
     [SerializeField] private Rigidbody2D m_rigidbody;
     [SerializeField] private GameObject m_popupPrefab;
     [SerializeField] private Animator m_animator;
@@ -31,7 +34,9 @@ public class Enemy : MonoBehaviour
     {
         m_currentHealth = m_maxHealth;
         m_target = LevelManager.I.m_BaseTarget;
-        m_moveSpeed = Random.Range(m_minMaxMoveSpeed.x, m_minMaxMoveSpeed.y);
+        m_moveSpeed = LevelManager.I.IsLateGame()
+            ? Random.Range(m_minMaxMoveSpeedLateGame.x, m_minMaxMoveSpeedLateGame.y)
+            : Random.Range(m_minMaxMoveSpeed.x, m_minMaxMoveSpeed.y);
         m_animator.SetBool("Walking", true);
     }
 
@@ -56,7 +61,7 @@ public class Enemy : MonoBehaviour
         Vector2 direction = ((Vector2)m_target.position - m_rigidbody.position).normalized;
         if (m_isSlowed)
         {
-            m_rigidbody.velocity = direction * (m_moveSpeed * 0.5f);
+            m_rigidbody.velocity = direction * (m_moveSpeed * 0.35f);
             return;
         }
         m_rigidbody.velocity = direction * m_moveSpeed;
@@ -133,8 +138,7 @@ public class Enemy : MonoBehaviour
         if (m_isBoss)
         {
             ScoreManager.I.AddBonusPoints();
-            if (m_isGameKiller)
-                GameManager.I.WinGame();
+            if (m_isGameKiller) GameManager.I.WinGame();
         }
     }
 
@@ -153,12 +157,17 @@ public class Enemy : MonoBehaviour
 
     private void GiveTime()
     {
-        int m_timeGainedOnDeath = Mathf.RoundToInt(Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath));
-        if (m_timeGainedOnDeath > 0)
+        int timeGainedOnDeath = Mathf.RoundToInt(
+            LevelManager.I.IsLateGame()
+                ? Random.Range(m_minTimeGainedOnDeathInLateGame, m_maxTimeGainedOnDeathInLateGame)
+                : Random.Range(m_minTimeGainedOnDeath, m_maxTimeGainedOnDeath)
+        );
+
+        if (timeGainedOnDeath > 0)
         {
-            SpawnPopup("+" + m_timeGainedOnDeath);
+            SpawnPopup("+" + timeGainedOnDeath);
         }
-        LevelManager.I.AddTime(m_timeGainedOnDeath);
+        LevelManager.I.AddTime(timeGainedOnDeath);
     }
 
     private void SpawnPopup(string _value)

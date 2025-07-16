@@ -6533,7 +6533,7 @@ MonoBehaviour:
   m_sliderFill: {fileID: 1795632946}
   m_sliderFillAccent: {fileID: 357691013}
   m_currentTimeText: {fileID: 1693564798}
-  m_crazyTimeOverflowStartingPoint: 150
+  m_crazyTimeOverflowStartingPoint: 120
   m_crazyTimeOverflowDrainRate: 40
 --- !u!4 &216713660
 Transform:
@@ -6678,6 +6678,7 @@ MonoBehaviour:
   m_maxTime: 100
   m_currentTimeValue: 0
   m_totalTimePassed: 0
+  m_lateGameTime: 300
   m_timeReductionMultiplier: 1
   m_BaseTarget: {fileID: 1274609479}
 --- !u!4 &279372613
@@ -7006,6 +7007,7 @@ MonoBehaviour:
   m_fireRate: 0.45
   m_screenShakeAmount: 1
   m_playerCamera: {fileID: 519420031}
+  m_smallestPossibleFireRate: 0.17
 --- !u!114 &302212435
 MonoBehaviour:
   m_ObjectHideFlags: 0
